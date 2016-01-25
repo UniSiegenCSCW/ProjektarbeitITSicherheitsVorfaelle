@@ -6,6 +6,12 @@ var request = require('request');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.post('/autocompleteVendor', function(req, res){
 	var vendor = req.body.vendor;
 	var productArr;
@@ -21,7 +27,7 @@ app.post('/autocompleteVendor', function(req, res){
 		  var jsonBody = JSON.parse(body);
 		productArr = jsonBody.product;		
 		for (var index in productArr) {
-			var repl = productArr[index].replace("_", " ");
+			var repl = productArr[index].replace(/_/g, " ");
 			productArrReplaced.push(repl);
 			//console.log(repl);
 		}
