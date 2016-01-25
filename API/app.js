@@ -32,7 +32,7 @@ app.post('/autocompleteVendor', function(req, res){
 				var repl = vendorArr[index].replace(/_/g, " ");
 				if (repl.indexOf(filter) != -1) {
 					vendorArrReplaced.push(repl);
-					console.log(repl);
+					//console.log(repl);
 				}
 			}
 			//console.log(productArrReplaced);
