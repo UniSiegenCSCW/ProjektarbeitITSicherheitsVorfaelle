@@ -13,6 +13,31 @@ app.use(function(req, res, next) {
 });
 
 app.post('/autocompleteVendor', function(req, res){
+	var vendorArr;
+	var vendorArrReplaced = [];
+	
+	var options = {
+	  uri: 'http://cve.circl.lu/api/browse/',
+	  method: 'GET'
+	};
+
+	request(options, function (error, response, body) {
+	  if (!error && response.statusCode == 200) {
+		  var jsonBody = JSON.parse(body);
+		vendorArr = jsonBody.vendor;	
+		console.log(vendorArr);	
+		for (var index in vendorArr) {
+			var repl = vendorArr[index].replace(/_/g, " ");
+			vendorArrReplaced.push(repl);
+			//console.log(repl);
+		}
+		//console.log(productArrReplaced);
+		res.send(vendorArrReplaced);
+	  }
+	});
+})
+
+app.post('/autocompleteProduct', function(req, res){
 	var vendor = req.body.vendor;
 	var productArr;
 	var productArrReplaced = [];
