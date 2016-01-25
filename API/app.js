@@ -15,6 +15,7 @@ app.use(function(req, res, next) {
 app.post('/autocompleteVendor', function(req, res){
 	var vendorArr;
 	var vendorArrReplaced = [];
+	var filter = req.body.filter;
 	
 	var options = {
 	  uri: 'http://cve.circl.lu/api/browse/',
@@ -25,11 +26,14 @@ app.post('/autocompleteVendor', function(req, res){
 	  if (!error && response.statusCode == 200) {
 		  var jsonBody = JSON.parse(body);
 		vendorArr = jsonBody.vendor;	
-		console.log(vendorArr);	
+		//console.log(vendorArr);	
 		for (var index in vendorArr) {
 			var repl = vendorArr[index].replace(/_/g, " ");
-			vendorArrReplaced.push(repl);
-			//console.log(repl);
+			if (repl.indexOf(filter) != -1)
+			{
+				vendorArrReplaced.push(repl);
+				console.log(repl);
+			}
 		}
 		//console.log(productArrReplaced);
 		res.send(vendorArrReplaced);
