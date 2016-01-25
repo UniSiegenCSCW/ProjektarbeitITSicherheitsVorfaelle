@@ -22,23 +22,24 @@ app.post('/autocompleteVendor', function(req, res){
 	  method: 'GET'
 	};
 
-	request(options, function (error, response, body) {
-	  if (!error && response.statusCode == 200) {
-		  var jsonBody = JSON.parse(body);
-		vendorArr = jsonBody.vendor;	
-		//console.log(vendorArr);	
-		for (var index in vendorArr) {
-			var repl = vendorArr[index].replace(/_/g, " ");
-			if (repl.indexOf(filter) != -1)
-			{
-				vendorArrReplaced.push(repl);
-				console.log(repl);
+	if(filter.length >= 2) {
+		request(options, function (error, response, body) {
+	  	if (!error && response.statusCode == 200) {
+		  	var jsonBody = JSON.parse(body);
+			vendorArr = jsonBody.vendor;	
+			//console.log(vendorArr);	
+			for (var index in vendorArr) {
+				var repl = vendorArr[index].replace(/_/g, " ");
+				if (repl.indexOf(filter) != -1) {
+					vendorArrReplaced.push(repl);
+					console.log(repl);
+				}
 			}
-		}
-		//console.log(productArrReplaced);
-		res.send(vendorArrReplaced);
-	  }
-	});
+			//console.log(productArrReplaced);
+			res.send(vendorArrReplaced);
+	  		}
+		});
+	}
 })
 
 app.post('/autocompleteProduct', function(req, res){
