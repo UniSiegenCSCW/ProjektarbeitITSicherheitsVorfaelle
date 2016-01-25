@@ -1,0 +1,197 @@
+<div class="formHead">
+	<h3>Angriff</h3>
+	<p>Hier haben Sie die Möglichkeit den IT-Sicherheitsvorfall näher zu beschreiben</p>
+</div>
+
+<h4>Wie wurde der Angriff erkann?</h4>
+<hr>
+<div class="erkannt col-md-12">
+	<div class="select-question form-group">
+		<form class="form-inline">
+			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{drei.popoverText.festgestellt.title}}" popover-placement="left" uib-popover="{{drei.popoverText.festgestellt.text}}" popover-trigger="mouseenter"></span>
+			<label class="question">Wodurch ist der Angriff festgestellt worden?</label>
+			<select class="form-control pull-right" ng-model="super.data.angriff.festgestellt" ng-options="o as o for o in drei.festgestellt.optionen"></select>
+		</form>
+	</div>
+	<div class="form-group">
+			<div class="festgestelltDetails" ng-hide="super.data.angriff.festgestellt == 'Keine' || super.data.angriff.festgestellt == undefined">
+				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{drei.popoverText.festgestellt.title}}" popover-placement="left" uib-popover="{{drei.popoverText.festgestellt.text}}" popover-trigger="mouseenter"></span>
+				<label class="question">Können Sie genauer beschreiben, wie <span class="auswahl">{{super.data.angriff.festgestellt}}</span> den Angriff festgestellt hat?</label>
+				<textarea ng-model="super.data.angriff.festgestelltDetails" id="text" name="text" cols="75" rows="4"></textarea> 
+			</div>
+	</div>
+</div>
+<h4>Wie kann der Angriff näher beschrieben werden?</h4>
+<hr>
+<p>Wenn einzelne Aspekte nicht eindeutig zu identifizieren sind, dann bitte alle in Frage kommenden Möglichkeiten ankreuzen!</p>
+<br>
+<div class="beschreibung col-md-12">
+	<div class="radio-question form-group">
+		<form class="form-inline">
+			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.ermoeglicht.title}}" popover-placement="left" uib-popover="{{drei.popoverText.ermoeglicht.text}}" popover-trigger="mouseenter"></span><label class="question">Wodurch wurde der Angriff ermöglicht?</label>
+		</form>
+		<div class="checkbox-badge">
+			<input type="checkbox" ng-checked="super.data.angriff.miskonfiguration.checked" ng-model="super.data.angriff.miskonfiguration.checked"></input>
+			<label>Miskonfiguration:</label>
+			<div class="badge-list">
+				<a ng-repeat="item in drei.miskonfiguration.optionen" href>
+					<span ng-class="{'badge-primary' : true === drei.isSelected(item, 'miskonfiguration')}" ng-click="drei.itemClicked(item, 'miskonfiguration')" class="badge">{{item}}</span>
+				</a>
+			</div>
+		</div>
+		<div class="checkbox-line">
+			<input type="checkbox" ng-checked="super.data.angriff.usb.checked" ng-model="super.data.angriff.usb.checked"></input>
+			<label>USB Geräte (Speichermedien, Handy, etc.):</label>
+		</div>
+		<div class="checkbox-line">
+			<input type="checkbox" ng-checked="super.data.angriff.email.checked" ng-model="super.data.angriff.email.checked"></input>
+			<label>E-Mail (SPAM, Anhänge, etc.):</label>
+		</div>
+		<div class="checkbox-badge">
+			<input type="checkbox" ng-checked="super.data.angriff.eval.checked" ng-model="super.data.angriff.eval.checked"></input>
+			<label>Miskonfiguration:</label>
+			<div class="badge-list">
+				<a ng-repeat="item in drei.eval.optionen" href>
+					<span ng-class="{'badge-primary' : true === drei.isSelected(item, 'eval')}" ng-click="drei.itemClicked(item, 'eval')" class="badge">{{item}}</span>
+				</a>
+			</div>
+		</div>
+		<div class="checkbox-line">
+			<input type="checkbox" ng-checked="super.data.angriff.botnetz.checked" ng-model="super.data.angriff.botnetz.checked"></input>
+			<label>E-Mail (SPAM, Anhänge, etc.):</label>
+		</div>
+		<div class="checkbox-badge">
+			<input type="checkbox" ng-checked="super.data.angriff.ident.checked" ng-model="super.data.angriff.ident.checked"></input>
+			<label>Identitätsdiebstahl:</label>
+			<div class="badge-list">
+				<a ng-repeat="item in drei.ident.optionen" href>
+					<span ng-class="{'badge-primary' : true === drei.isSelected(item, 'ident')}" ng-click="drei.itemClicked(item, 'ident')" class="badge">{{item}}</span>
+				</a>
+			</div>
+		</div>
+		<div class="checkbox-line">
+			<input type="checkbox" ng-checked="super.data.angriff.sichlueck.checked" ng-model="super.data.angriff.sichlueck.checked"></input>
+			<label>Ausnutzen einer Sicherheitslücke eines IT-Produktes</label>
+		</div>
+		<div class="checkbox-line">
+			<input type="checkbox" ng-checked="super.data.angriff.social.checked" ng-model="super.data.angriff.social.checked"></input>
+			<label>Social Engineering</label>
+		</div>
+		<div class="checkbox-line">
+			<label class="question">Sonstige Angaben</label>
+			<textarea ng-model="super.data.angriff.beschreibungSonstiges" id="text" name="text" cols="75" rows="4"></textarea> 
+		</div>
+		<form class="form-inline">
+			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.art.title}}" popover-placement="left" uib-popover="{{drei.popoverText.art.text}}" popover-trigger="mouseenter"></span><label class="question">Welche Art des Angriffes wurde ermöglicht?</label>
+		</form>
+		<div class="checkbox-badge">
+			<input type="checkbox" ng-checked="super.data.angriff.schadprogramm.checked" ng-model="super.data.angriff.schadprogramm.checked"></input>
+			<label>Identitätsdiebstahl:</label>
+			<div class="badge-list">
+				<a ng-repeat="item in drei.schadprogramm.optionen" href>
+					<span ng-class="{'badge-primary' : true === drei.isSelected(item, 'schadprogramm')}" ng-click="drei.itemClicked(item, 'schadprogramm')" class="badge">{{item}}</span>
+				</a>
+			</div>
+		</div>
+		<div class="checkbox-line">
+			<input type="checkbox" ng-checked="super.data.angriff.dos.checked" ng-model="super.data.angriff.dos.checked"></input>
+			<label>Denial-of-Service</label>
+		</div>
+		<div class="checkbox-line">
+			<input type="checkbox" ng-checked="super.data.angriff.code.checked" ng-model="super.data.angriff.code.checked"></input>
+			<label>Beliebige Codeausführung</label>
+		</div>
+		<div class="checkbox-line">
+			<label class="question">Sonstige Angaben</label>
+			<textarea ng-model="super.data.angriff.artSonstiges" id="text" name="text" cols="75" rows="4"></textarea> 
+		</div>
+		<form class="form-inline">
+			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.art.title}}" popover-placement="left" uib-popover="{{drei.popoverText.art.text}}" popover-trigger="mouseenter"></span><label class="question">Welcher Zweck wurde durch den Angriff (vermutlich) verfolgt?</label>
+		</form>
+		<div class="checkbox-line">
+			<input type="checkbox" ng-checked="super.data.angriff.erpressung.checked" ng-model="super.data.angriff.erpressung.checked"></input>
+			<label>Erpressung</label>
+		</div>
+		<div class="checkbox-line">
+			<input type="checkbox" ng-checked="super.data.angriff.zweckIdent.checked" ng-model="super.data.angriff.zweckIdent.checked"></input>
+			<label>Identitätsdiebstahl</label>
+		</div>
+		<div class="checkbox-line">
+			<input type="checkbox" ng-checked="super.data.angriff.vertrInfo.checked" ng-model="super.data.angriff.vertrInfo.checked"></input>
+			<label>Entwendung vertraulicher Informationen</label>
+		</div>
+		<div class="checkbox-line">
+			<input type="checkbox" ng-checked="super.data.angriff.geschaeft.checked" ng-model="super.data.angriff.geschaeft.checked"></input>
+			<label>Störung der Geschäftstätigkeit</label>
+		</div>
+		<div class="checkbox-line">
+			<input type="checkbox" ng-checked="super.data.angriff.sabotage.checked" ng-model="super.data.angriff.sabotage.checked"></input>
+			<label>Sabotage / Denial-of-Service</label>
+		</div>
+		<div class="checkbox-line">
+			<input type="checkbox" ng-checked="super.data.angriff.manipulation.checked" ng-model="super.data.angriff.manipulation.checked"></input>
+			<label>Manipulation von Daten</label>
+		</div>
+		<div class="checkbox-line">
+			<input type="checkbox" ng-checked="super.data.angriff.systemressourcen.checked" ng-model="super.data.angriff.systemressourcen.checked"></input>
+			<label>Nutzung von Systemressourcen (Spam-Relay, Botnetz-Client, C&C-Server, Dropzone-Server)</label>
+		</div>
+		<div class="checkbox-line">
+			<input type="checkbox" ng-checked="super.data.angriff.defacement.checked" ng-model="super.data.angriff.defacement.checked"></input>
+			<label>Defacement</label>
+		</div>
+		<div class="checkbox-line">
+			<label class="question">Sonstige Angaben</label>
+			<textarea ng-model="super.data.angriff.zweckSonstiges" id="text" name="text" cols="75" rows="4"></textarea> 
+		</div>
+		<form class="form-inline">
+			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.system.title}}" popover-placement="left" uib-popover="{{drei.popoverText.system.text}}" popover-trigger="mouseenter"></span><label class="question">Welches System wurde angegriffen?</label>
+		</form>
+		<div class="input-line">
+			<input type="text" class="form-control" placeholder="Betriebssystem" ng-model="super.data.angriff.betriebssystem"></input>
+		</div>
+		<div class="input-line">
+			<input type="text" class="form-control" placeholder="Netzwerkkomponente" ng-model="super.data.angriff.netzwerkkomponente"></input>
+		</div>
+		<div class="input-line">
+			<input type="text" class="form-control" placeholder="Anwendung" ng-model="super.data.angriff.anwendung"></input>
+		</div>
+		<div class="input-line">
+			<input type="text" class="form-control" placeholder="Datenbanksserver" ng-model="super.data.angriff.datenbankserver"></input>
+		</div>
+		<div class="checkbox-line">
+			<label class="question">Sonstige Angaben</label>
+			<textarea ng-model="super.data.angriff.systemSonstiges" id="text" name="text" cols="75" rows="4"></textarea> 
+		</div>
+		<div class="checkbox-line">
+			<label class="question">Welche Angaben zum Angriff möchten Sie außerdem noch machen?</label>
+			<textarea ng-model="super.data.angriff.systemSonstiges" id="text" name="text" cols="75" rows="4"></textarea> 
+		</div>
+		<form class="form-inline">
+			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.schwachstelle.title}}" popover-placement="left" uib-popover="{{drei.popoverText.schwachstelle.text}}" popover-trigger="mouseenter"></span><label class="question">Können Sie die ausgenutzte Schwachstelle definieren?</label>
+		</form>
+		<form class="form-inline">
+			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.reaktion.title}}" popover-placement="left" uib-popover="{{drei.popoverText.reaktion.text}}" popover-trigger="mouseenter"></span><label class="question">Wie haben Sie auf den Angriff reagiert?</label>
+		</form>
+		<div class="checkbox-line">
+			<label class="question">Welche Maßnahmen wurden ergriffen?</label>
+			<textarea ng-model="super.data.angriff.massnahmen" id="text" name="text" cols="75" rows="4"></textarea> 
+		</div>
+		<div class="select-question form-group">
+			<form class="form-inline indent">
+				<label class="question">Wie groß schätzen Sie den Aufwand zur Behebung der Angriffsursache?</label>
+				<select class="form-control pull-right" ng-model="super.data.angriff.aufwBehebung" ng-options="o as o for o in drei.aufwBehebung.optionen"></select>
+			</form>
+		</div>
+		<div class="select-question form-group">
+			<form class="form-inline indent">
+				<label class="question">Konnten die Ursachen für den Angriff behoben werden?</label>
+				<select class="form-control pull-right" ng-model="super.data.angriff.behoben" ng-options="o as o for o in drei.behoben.optionen"></select>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="weiter form-group col-md-12">
+	<a class="btn btn-black btn-block" ng-href="#/fertig">Weiter</a>
+	<a class="btn btn-default btn-block" ng-href="#/zwei">Zurück</a>
+</div>

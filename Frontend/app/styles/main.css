@@ -1,0 +1,236 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+  background-color: #F5F7FA;
+}
+
+p {
+  font-weight: 300;
+  text-align: center;
+}
+
+input[type=checkbox] {
+  height: 17px;
+  width: 17px;
+}
+
+textarea {
+  resize : none;
+}
+
+hr {
+  margin-top: 2px;
+  border-top: 1px solid #8C8C8C;
+}
+
+h3 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h4 {
+  padding-left: 25px;
+  font-weight: 300;
+  margin-bottom: 0px;
+  margin-top: 30px;
+  display: inline-block;
+}
+
+.navbar-default {
+  background-color: #f6bb42;
+  border-color: #f6bb42;
+}
+
+.weiter {
+  margin-top: 35px;
+}
+
+.btn-black {
+  background-color: #434A54;
+  border-color: #434A54;
+}
+
+.btn-black:hover {
+  background-color: #656D78;
+  border-color: #656D78; 
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.radio-question {
+  text-align: left;
+}
+
+.glyphicon {
+  vertical-align: top;
+  margin-right: 10px;
+}
+
+.question {
+  padding-right: 10px;
+  font-weight: 400;
+}
+
+.radio-question .iradio_flat {
+  height: 17px;
+}
+
+.radio-inline {
+  vertical-align: baseline;
+}
+
+.radio-inline label {
+  padding-left: 5px;
+}
+
+.radio-question label {
+  font-weight: 400;
+  max-width: 500px;
+}
+
+.select-question label {
+  font-weight: 400;
+  max-width: 500px;
+} 
+
+.formHead p {
+  font-weight: 300;
+  text-align: center;
+}
+
+.descriptionLabel {
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #848484;
+}
+
+.auswahl {
+  background-color: #F6BB42;
+}
+
+.right {
+  text-align: right;
+  display: inline-block;
+}
+
+.checkbox-badge {
+  margin-bottom: 8px;
+  display: inline-flex;
+  margin-left: 60px;
+}
+
+.checkbox-line {
+  margin-bottom: 8px;
+  margin-left: 60px;
+}
+
+.checkbox-badge input {
+  margin-right: 5px;
+}
+
+.checkbox-badge label {
+  margin-right: 5px;
+}
+
+.badge-list {
+  display: inline-block;
+  width: 475px;
+}
+
+.badge {
+  font-weight: 300;
+}
+
+.input-line {
+  margin-bottom: 8px;
+  margin-left: 60px;
+}
+
+.form-control {
+  margin-bottom: 4px;
+}
+
+.indent {
+  margin-left: 60px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
