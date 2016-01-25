@@ -40,6 +40,9 @@ app.post('/autocompleteVendor', function(req, res){
 	  		}
 		});
 	}
+	else {
+		res.sendStatus(400);
+	}
 })
 
 app.post('/autocompleteProduct', function(req, res){
