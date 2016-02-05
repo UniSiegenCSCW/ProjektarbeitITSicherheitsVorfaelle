@@ -113,7 +113,6 @@ angular.module('kritisformularApp')
             data: cveJsonData
           }).then(function successCallback(response){
             $scope.drei.cveEmpfehlungsArray = response.data;
-            console.log($scope.drei.cveEmpfehlungsArray)
           }, function errorCallback(error){
             console.log(error);
           });
