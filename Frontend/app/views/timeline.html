@@ -1,0 +1,16 @@
+<div ng-init="timeline.getAllDocuments()">
+	<div class="timeline">
+		<dl>
+			<dd ng-repeat="document in timeline.allDocuments" class="clearfix" ng-class-odd="'pos-right'" ng-class-even="'pos-left'">
+				<div class="circ"></div>
+				<div class="time">{{document._creation_date | date : 'MMM dd' }}</div>
+				<div class="events">
+				  <div class="events-body">
+					  <a ng-href="#/details/{{document.id}}"><h4 class="events-heading">{{timeline.buildTitle(document)}}</h4></a>
+					  <span ng-class="{'badge-danger' : 'ja' === document.kontakt.kritis}" class="badge">KRITIS</span>
+				  </div>
+			  </div>
+			</dd>
+		</dl>
+	</div>
+</div>

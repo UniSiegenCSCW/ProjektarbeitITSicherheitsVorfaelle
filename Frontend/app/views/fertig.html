@@ -3,6 +3,12 @@
 	<p>Hier haben Sie die Möglichkeit den IT-Sicherheitsvorfall näher zu beschreiben</p>
 </div>
 {{super.data}}
+<div class="alert" ng-show="super.statusInfo.feedback" ng-class="super.statusInfo.status == 'success' ? 'alert-success' : (super.statusInfo.status == 'error' ? 'alert-danger' : 'alert-danger')" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  <p ng-show="super.statusInfo.status == 'success'">Das Formular wurde erfolgreich versendet!</p>
+  <p ng-show="super.statusInfo.status == 'error'">Es ist ein Problem beim versenden des Formulars aufgetreten, versuchen Sie es später nocheinmal.</p>
+</div>
 <div class="weiter form-group col-md-12">
-	<a class="btn btn-black btn-block" ng-href="#/fertig">Absenden</a>
+	<a class="btn btn-black btn-block" ng-href="#/fertig" ng-click="super.finish()">Absenden</a>
+	<a class="btn btn-default btn-block" target="_self" ng-href="/">Startseite</a>
 </div>

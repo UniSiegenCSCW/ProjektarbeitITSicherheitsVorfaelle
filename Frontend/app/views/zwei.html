@@ -34,12 +34,12 @@
 			</label>
 		</div>
 	</div>
-	<div class="form-group">
-			  <span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.endzeitpunkt.title}}" popover-placement="left" uib-popover="{{zwei.popoverText.endzeitpunkt.text}}" popover-trigger="mouseenter"></span><label class="descriptionLabel">Endzeitpunkt</label>
-			  <form class="form-inline">
-				  <input type="date" class="form-control" ng-model="super.data.vorfall.endzeitpunkt.date" uib-tooltip="Datum" tooltip-trigger="mouseenter" tooltip-placement="left">
-				  <input type="time" class="form-control" ng-model="super.data.vorfall.endzeitpunkt.time" uib-tooltip="Uhrzeit" tooltip-trigger="mouseenter" tooltip-placement="right">
-			 	</form>
+	<div class="form-group" ng-show="super.data.vorfall.dauertAn == 'nein'">
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.endzeitpunkt.title}}" popover-placement="left" uib-popover="{{zwei.popoverText.endzeitpunkt.text}}" popover-trigger="mouseenter"></span><label class="descriptionLabel">Endzeitpunkt</label>
+		<form class="form-inline">
+			<input type="date" class="form-control" ng-model="super.data.vorfall.endzeitpunkt.date" uib-tooltip="Datum" tooltip-trigger="mouseenter" tooltip-placement="left">
+			<input type="time" class="form-control" ng-model="super.data.vorfall.endzeitpunkt.time" uib-tooltip="Uhrzeit" tooltip-trigger="mouseenter" tooltip-placement="right">
+		</form>
 	</div>
 </div>
 <h4>Welche Auswirkungen hatte der Vorfall?</h4>
@@ -68,9 +68,9 @@
 	</div>
 	<div class="select-question form-group">
 		<form class="form-inline">
-			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.zugriff.title}}" popover-placement="left" uib-popover="{{zwei.popoverText.zugriff.text}}" popover-trigger="mouseenter"></span>
+			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.unauthZugriffVertrInfo.title}}" popover-placement="left" uib-popover="{{zwei.popoverText.unauthZugriffVertrInfo.text}}" popover-trigger="mouseenter"></span>
 			<label class="question">Inwiefern bestand unauthorisierter Zugriff auf vertrauliche Informationen?</label>
-			<select class="form-control pull-right" ng-model="super.data.vorfall.zugriff" ng-options="o as o for o in zwei.zugriff.optionen"></select>
+			<select class="form-control pull-right" ng-model="super.data.vorfall.unauthZugriffVertrInfo" ng-options="o as o for o in zwei.unauthZugriffVertrInfo.optionen"></select>
 		</form>
 	</div>
 </div>

@@ -30,7 +30,9 @@ hr {
 }
 
 h3 {
-  text-align: center;
+  text-align: left;
+  font-size: 19px;
+  font-weight: 400;
   text-transform: uppercase;
 }
 
@@ -42,9 +44,126 @@ h4 {
   display: inline-block;
 }
 
+h5 {
+  margin: 0;
+  font-size: 19px;
+  color: #FFF;
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 48px;
+}
+
+.header-container {
+  position: relative;
+  z-index: 1;
+  height: 200px;
+  background-color: #f6bb42;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.circle-container {
+  display: inline-block;
+}
+
+.circle-container span {
+  display: block;
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+}
+
+.header-container li {
+  width: 4em;
+  height: 4em;
+  text-align: center;
+  line-height: 4em;
+  border-radius: 3em;
+  background: #656D78;
+  margin: 0 6em;
+  display: inline-block;
+  color: white;
+  position: relative;
+}
+
+.header-container li.active {
+  background: black;
+}
+
+.header-container li::before {
+  content: '';
+  position: absolute;
+  top: 1.9em;
+  left: -8em;
+  width: 18em;
+  height: .3em;
+  background: #656D78;
+  z-index: -1;
+}
+
+.header-timeline {
+  height: 50px;
+  background: #37BB9B;
+  text-align: center;
+}
+
+.events-body h4 {
+  font-weight: 500;
+  display: block;
+}
+
+.events-body p {
+  text-align: left;
+}
+
+.header-vertical-center {
+  line-height: 48px;
+}
+
 .navbar-default {
   background-color: #f6bb42;
   border-color: #f6bb42;
+}
+
+.details-head p {
+  text-align: left;
+}
+
+.inline {
+  display: inline;
+}
+
+.line {
+  width: 100%;
+  height: 13px;
+  border-bottom: 1px solid black;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.line span {
+  font-size: 18px; 
+  background-color: #F5F7FA; 
+  padding: 0 10px;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+.details-part {
+  margin-bottom: 40px;
+}
+
+.details-part p {
+  text-align: left;
+}
+
+.details-part .badge {
+  margin-right: 3px;
+}
+
+.details-container {
+  margin-bottom: 50px;
 }
 
 .weiter {
@@ -162,6 +281,16 @@ h4 {
   margin-left: 60px;
 }
 
+.alert {
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+.alert span,
+.alert p {
+  display: inline;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -227,7 +356,7 @@ h4 {
   }
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
+    margin-bottom: 0px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {

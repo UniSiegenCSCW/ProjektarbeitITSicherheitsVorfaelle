@@ -8,10 +8,10 @@
  * Controller of the kritisformularApp
  */
 angular.module('kritisformularApp')
-  .controller('DreiCtrl', function ($scope) {
+  .controller('DreiCtrl', function ($scope, autocompleteService) {
 
   	this.popoverText = {
-  		festgestellt : {
+  		festgestelltDurch : {
   			title : "Title",
   			text : "Text"
   		},
@@ -29,7 +29,7 @@ angular.module('kritisformularApp')
       }
   	}
 
-  	this.festgestellt = {
+  	this.festgestelltDurch = {
   		optionen : ["Administrator", "Intusion Detection System", "Benutzer", "Keine"]
   	};
 
@@ -38,12 +38,12 @@ angular.module('kritisformularApp')
       "Standardeinstellungen Beibehalten"]
     }
 
-    this.eval = {
+    this.evalCheck = {
       optionen : ["Cross-Site Scripting", "SQL Injection", "Buffer Overflow", 
       "Criss-Site Request Forgery"]
     }
 
-    this.ident = {
+    this.identTheft = {
       optionen : ["Man-In-The-Middle", "Phishing", "Spoofing", "Pharming"]
     }
 
@@ -51,7 +51,7 @@ angular.module('kritisformularApp')
       optionen : ["Virus", "Wurm", "Trojanisches Pferd", "Adware", "Spyware"]
     }
 
-    this.aufwBehebung = {
+    this.aufwandBehebung = {
       optionen : ["Hoch", "Mittel", "Gering"]
     }
 
@@ -59,23 +59,41 @@ angular.module('kritisformularApp')
       optionen : ["Ja", "Nein", "Teilweise"]
     }
 
-    this.isSelected = function(item, checkboxName) {
-      if($scope.super.data.angriff[checkboxName].optionenChecked.indexOf(item) != -1){
+    this.vendorArray = [];
+
+    this.productArray = [];
+
+    this.isSelected = function(item, checkboxName, kategorie) {
+      if($scope.super.data.angriff[kategorie][checkboxName].optionenChecked.indexOf(item) != -1){
         return true;
       }
     }
 
-    this.itemClicked = function(badgeName, checkboxName) {
-      if($scope.super.data.angriff[checkboxName].optionenChecked.indexOf(badgeName) == -1){
-        $scope.super.data.angriff[checkboxName].checked = true;
-        $scope.super.data.angriff[checkboxName].optionenChecked.push(badgeName);
+    this.itemClicked = function(badgeName, checkboxName, kategorie) {
+      if($scope.super.data.angriff[kategorie][checkboxName].optionenChecked.indexOf(badgeName) == -1){
+        $scope.super.data.angriff[kategorie][checkboxName].checked = true;
+        $scope.super.data.angriff[kategorie][checkboxName].optionenChecked.push(badgeName);
       }
       else {
-        var index = $scope.super.data.angriff[checkboxName].optionenChecked.indexOf(badgeName)
-        $scope.super.data.angriff[checkboxName].optionenChecked.splice(index, 1);
-        if($scope.super.data.angriff[checkboxName].optionenChecked.length == 0){
-          $scope.super.data.angriff[checkboxName].checked = false;
+        var index = $scope.super.data.angriff[kategorie][checkboxName].optionenChecked.indexOf(badgeName)
+        $scope.super.data.angriff[kategorie][checkboxName].optionenChecked.splice(index, 1);
+        if($scope.super.data.angriff[kategorie][checkboxName].optionenChecked.length == 0){
+          $scope.super.data.angriff[kategorie][checkboxName].checked = false;
         }
       }
+    }
+
+    this.updateVendors = function(typed) {
+      this.vendorArray = autocompleteService.getVendors(typed);
+      this.vendorArray.then(function(data) {
+        $scope.drei.vendorArray = data;
+      });
+    }
+
+    this.updateProducts = function(typed) {
+      this.productArray = autocompleteService.getProducts($scope.super.data.angriff.hersteller);
+      this.productArray.then(function(data) {
+        $scope.drei.productArray = data;
+      });
     }
   });

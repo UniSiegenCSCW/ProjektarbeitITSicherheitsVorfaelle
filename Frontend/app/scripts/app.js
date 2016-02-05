@@ -16,7 +16,10 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'autocomplete',
+    'ngBaasbox',
+    'ngLocale'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -44,6 +47,16 @@ angular
         templateUrl: 'views/fertig.html',
         controller: 'FertigCtrl',
         controllerAs: 'fertig'
+      })
+      .when('/timeline', {
+        templateUrl: 'views/timeline.html',
+        controller: 'TimelineCtrl',
+        controllerAs: 'timeline'
+      })
+      .when('/details/:documentId', {
+        templateUrl: 'views/details.html',
+        controller: 'DetailsCtrl',
+        controllerAs: 'details'
       })
       .otherwise({
         redirectTo: '/'

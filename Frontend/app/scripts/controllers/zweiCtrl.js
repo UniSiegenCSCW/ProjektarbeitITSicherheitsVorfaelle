@@ -34,7 +34,7 @@ angular.module('kritisformularApp')
         title : "Title",
         text : "Text"
       },
-      zugriff : {
+      unauthZugriffVertrInfo : {
         title : "Title",
         text : "Text"
       }
@@ -42,7 +42,7 @@ angular.module('kritisformularApp')
   	this.auswirkungen = {
   		optionen : ["Hoch", "Mittel", "Niedrig", "Keine"]
   	};
-  	this.zugriff = {
+  	this.unauthZugriffVertrInfo = {
   		optionen : ["Noch aendern 1", "Noch aendern 2", "Noch aendern 3", "Kein Zugriff"]
   	};
   });
