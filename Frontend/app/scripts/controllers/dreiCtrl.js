@@ -8,7 +8,9 @@
  * Controller of the kritisformularApp
  */
 angular.module('kritisformularApp')
-  .controller('DreiCtrl', function ($scope, autocompleteService) {
+  .controller('DreiCtrl', function ($scope, autocompleteService, $timeout, $http) {
+
+    this.cveEmpfehlungsArray = [];
 
   	this.popoverText = {
   		festgestelltDurch : {
@@ -91,9 +93,30 @@ angular.module('kritisformularApp')
     }
 
     this.updateProducts = function(typed) {
-      this.productArray = autocompleteService.getProducts($scope.super.data.angriff.hersteller);
+      this.productArray = autocompleteService.getProducts($scope.super.data.angriff.systemHersteller);
       this.productArray.then(function(data) {
         $scope.drei.productArray = data;
       });
     }
+    
+    var cveRequestTimeout;
+    $scope.$watch("super.data.angriff.systemProdukt", function(newValue, oldValue) {
+      var cveJsonData = {
+        vendor : $scope.super.data.angriff.systemHersteller,
+        product : $scope.super.data.angriff.systemProdukt
+      }
+      if(cveRequestTimeout) $timeout.cancel(cveRequestTimeout);
+        cveRequestTimeout = $timeout(function() {
+          $http({
+            method: 'POST',
+            url: 'http://localhost:3000/cveSearch',
+            data: cveJsonData
+          }).then(function successCallback(response){
+            $scope.drei.cveEmpfehlungsArray = response.data;
+            console.log($scope.drei.cveEmpfehlungsArray)
+          }, function errorCallback(error){
+            console.log(error);
+          });
+        }, 2000); 
+    });
   });

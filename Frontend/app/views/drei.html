@@ -161,6 +161,15 @@
 		<form class="form-inline">
 			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.schwachstelle.title}}" popover-placement="left" uib-popover="{{drei.popoverText.schwachstelle.text}}" popover-trigger="mouseenter"></span><label class="question">Können Sie die ausgenutzte Schwachstelle definieren?</label>
 		</form>
+		<div class="input-line">
+			<label class="radio-inline">
+				<div class="cveEmpfehlungen" ng-repeat="item in drei.cveEmpfehlungsArray">
+				<input type="radio" class="iradio_flat" ng-model="super.data.angriff.cve.empfehlung.eintrag" value="ja" ></input>
+				<div class="jumbotron">
+					{{item.id}}
+				</div>
+			</div>
+		</div>
 		<form class="form-inline">
 			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.reaktion.title}}" popover-placement="left" uib-popover="{{drei.popoverText.reaktion.text}}" popover-trigger="mouseenter"></span><label class="question">Wie haben Sie auf den Angriff reagiert?</label>
 		</form>
