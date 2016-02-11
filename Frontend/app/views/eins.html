@@ -1,32 +1,34 @@
-<div class="formHead">
-	<h3>Kontakt</h3>
-	<p>Bitte geben Sie ihre Kontaktdaten an, um gegebenenfalls bei Rückfragen kontaktiert zu werden</p>
-</div>
-
-<div class="form-group col-md-12">
-	<input type="text" class="form-control" popover-append-to-body="true" ng-model="super.data.kontakt.vorname" popover-title="{{eins.popoverText.vorname.title}}" popover-placement="left" uib-popover="{{eins.popoverText.vorname.text}}" popover-trigger="mouseenter" placeholder="Vorname">
-	<input type="text" class="form-control" popover-append-to-body="true" ng-model="super.data.kontakt.nachname" popover-title="{{eins.popoverText.nachname.title}}" popover-placement="left" uib-popover="{{eins.popoverText.vorname.text}}" popover-trigger="mouseenter" placeholder="Nachname">
-</div>
-<div class="form-group col-md-12">
-	<input type="text" class="form-control" popover-append-to-body="true" ng-model="super.data.kontakt.organisation" popover-title="{{eins.popoverText.organisation.title}}" popover-placement="left" uib-popover="{{eins.popoverText.organisation.text}}" popover-trigger="mouseenter" placeholder="Organisation">
-	<input type="text" class="form-control" popover-append-to-body="true" ng-model="super.data.kontakt.organisationRolle" popover-title="{{eins.popoverText.organisationRolle.title}}" popover-placement="left" uib-popover="{{eins.popoverText.organisationRolle.text}}" popover-trigger="mouseenter" placeholder="Rolle in der Organisation">
-</div>
-<div class="form-group col-md-12">
-	<input type="text" class="form-control" popover-append-to-body="true" ng-model="super.data.kontakt.email" popover-title="{{eins.popoverText.email.title}}" popover-placement="left" uib-popover="{{eins.popoverText.email.text}}" popover-trigger="mouseenter" placeholder="E-Mail">
-	<input type="text" class="form-control" popover-append-to-body="true" ng-model="super.data.kontakt.telefonnummer" popover-title="{{eins.popoverText.telefonnummer.title}}" popover-placement="left" uib-popover="{{eins.popoverText.telefonnummer.text}}" popover-trigger="mouseenter" placeholder="Telefonnummer">
-</div>
-<div class="radio-question form-group col-md-12">
-	<label class="question">Sind Sie betreiber einer kritischen Infrastruktur?</label>
-	<div class="pull-right">
-		<label class="radio-inline">
-			<input type="radio" name="Ja" class="iradio_flat" ng-model="super.data.kontakt.kritis" value="ja" ><label>Ja</label>
-		</label>
-		<label class="radio-inline">
-			<input type="radio" name="Nein" class="iradio_flat" ng-model="super.data.kontakt.kritis" value="nein" checked><label>Nein</label>
-		</label>
+<div class="container">
+	<div class="formHead">
+		<h3>Kontakt</h3>
+		<p>Bitte geben Sie ihre Kontaktdaten an, um gegebenenfalls bei Rückfragen kontaktiert zu werden</p>
 	</div>
-</div>
-<div class="form-group col-md-12">
-	<a class="weiter btn-black btn btn-block" ng-href="#/zwei">Weiter</a>
-	<a class="btn btn-default btn-block" ng-href="#/">Startseite</a>
+
+	<div class="form-group col-md-12">
+		<input type="text" class="form-control" popover-append-to-body="true" ng-model="super.data.kontakt.vorname" popover-title="{{eins.popoverText.vorname.title}}" popover-placement="left" uib-popover="{{eins.popoverText.vorname.text}}" popover-trigger="mouseenter" placeholder="Vorname">
+		<input type="text" class="form-control" popover-append-to-body="true" ng-model="super.data.kontakt.nachname" popover-title="{{eins.popoverText.nachname.title}}" popover-placement="left" uib-popover="{{eins.popoverText.vorname.text}}" popover-trigger="mouseenter" placeholder="Nachname">
+	</div>
+	<div class="form-group col-md-12">
+		<input type="text" class="form-control" popover-append-to-body="true" ng-model="super.data.kontakt.organisation" popover-title="{{eins.popoverText.organisation.title}}" popover-placement="left" uib-popover="{{eins.popoverText.organisation.text}}" popover-trigger="mouseenter" placeholder="Organisation">
+		<input type="text" class="form-control" popover-append-to-body="true" ng-model="super.data.kontakt.organisationRolle" popover-title="{{eins.popoverText.organisationRolle.title}}" popover-placement="left" uib-popover="{{eins.popoverText.organisationRolle.text}}" popover-trigger="mouseenter" placeholder="Rolle in der Organisation">
+	</div>
+	<div class="form-group col-md-12">
+		<input type="text" class="form-control" popover-append-to-body="true" ng-model="super.data.kontakt.email" popover-title="{{eins.popoverText.email.title}}" popover-placement="left" uib-popover="{{eins.popoverText.email.text}}" popover-trigger="mouseenter" placeholder="E-Mail">
+		<input type="text" class="form-control" popover-append-to-body="true" ng-model="super.data.kontakt.telefonnummer" popover-title="{{eins.popoverText.telefonnummer.title}}" popover-placement="left" uib-popover="{{eins.popoverText.telefonnummer.text}}" popover-trigger="mouseenter" placeholder="Telefonnummer">
+	</div>
+	<div class="radio-question form-group col-md-12">
+		<label class="question">Sind Sie betreiber einer kritischen Infrastruktur?</label>
+		<div class="pull-right">
+			<label class="radio-inline">
+				<input type="radio" name="Ja" class="iradio_flat" ng-model="super.data.kontakt.kritis" value="ja" ><label>Ja</label>
+			</label>
+			<label class="radio-inline">
+				<input type="radio" name="Nein" class="iradio_flat" ng-model="super.data.kontakt.kritis" value="nein" checked><label>Nein</label>
+			</label>
+		</div>
+	</div>
+	<div class="form-group col-md-12">
+		<a class="weiter btn-black btn btn-block" ng-href="#/zwei">Weiter</a>
+		<a class="btn btn-default btn-block" ng-href="#/">Startseite</a>
+	</div>
 </div>

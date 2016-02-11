@@ -112,6 +112,7 @@ angular.module('kritisformularApp')
             url: 'http://localhost:3000/cveSearch',
             data: cveJsonData
           }).then(function successCallback(response){
+            console.log(response);
             $scope.drei.cveEmpfehlungsArray = response.data;
           }, function errorCallback(error){
             console.log(error);

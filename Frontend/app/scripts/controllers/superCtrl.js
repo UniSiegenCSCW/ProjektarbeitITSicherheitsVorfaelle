@@ -142,6 +142,7 @@ angular.module('kritisformularApp')
             SystemProdukt : "",
             systemBeschreibungSonstiges : "",
             cveEmpfehlung : "",
+            cveEigenerEintrag : "",
             massnahmenErgriffen : "",
             aufwandBehebung : "",
             behoben : ""

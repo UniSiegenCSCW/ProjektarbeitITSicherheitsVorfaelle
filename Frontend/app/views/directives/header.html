@@ -23,18 +23,18 @@
   </div>
   <div ng-if="head.isReport()">
     <div class="header-container">
-      <div class="circle-container">
+      <a href="#/eins"><div class="circle-container">
         <li ng-class="{'active' : head.getCurrentLocation() == '/eins'}">1</li>
         <span>Kontaktinformationen</span>
-      </div>
-      <div class="circle-container">
+      </div></a>
+      <a href="#/zwei"><div class="circle-container">
         <li ng-class="{'active' : head.getCurrentLocation() == '/zwei'}">2</li>
         <span>Vorfallinformationen</span>
-      </div>
-      <div class="circle-container">
+      </div></a>
+      <a href="#/drei"><div class="circle-container">
         <li ng-class="{'active' : head.getCurrentLocation() == '/drei'}">3</li>
         <span>Angriffsinformationen</span>
-      </div>
+      </div></a>
       <div class="circle-container">
         <li ng-class="{'active' : head.getCurrentLocation() == '/fertig'}">4</li>
         <span>Überprüfen</span>

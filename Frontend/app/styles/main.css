@@ -37,7 +37,7 @@ h3 {
 }
 
 h4 {
-  padding-left: 25px;
+  padding-left: 0px;
   font-weight: 300;
   margin-bottom: 0px;
   margin-top: 30px;
@@ -107,6 +107,10 @@ h5 {
   text-align: center;
 }
 
+.timeline dl dd .events {
+  padding-bottom: 10px;
+}
+
 .events-body h4 {
   font-weight: 500;
   display: block;
@@ -127,6 +131,10 @@ h5 {
 
 .details-head p {
   text-align: left;
+}
+
+.grey {
+  background-color: #efefef;
 }
 
 .inline {
@@ -215,6 +223,39 @@ h5 {
   max-width: 500px;
 }
 
+.cve-jumbotron {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  text-align: left !important; 
+  margin-bottom: 15px;
+}
+
+.jumbotron p {
+  margin-bottom: 8px;
+  font-size: 12px;
+  text-align: left;
+}
+
+.weitere-infos {
+  margin-bottom: 3px !important;
+}
+
+.cve-jumbotron h5 {
+  color: #000;
+  font-size: 13px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  line-height: 13px;
+  text-align: left;
+}
+
+.cve-jumbotron ul {
+  padding-left: 18px;
+  margin-bottom: 5px;
+  font-size: 13px;
+  font-weight: 200;
+}
+
 .select-question label {
   font-weight: 400;
   max-width: 500px;
@@ -261,7 +302,7 @@ h5 {
 
 .badge-list {
   display: inline-block;
-  width: 475px;
+  width: 360px;
 }
 
 .badge {

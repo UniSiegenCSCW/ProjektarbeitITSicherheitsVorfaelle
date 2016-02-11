@@ -1,16 +1,18 @@
 <div class="details-container">
-	<div class="details-head">
-		<h3>{{details.buildTitle(details.document)}}</h3>
+	<div class="container details-head">
+		<h3>Angriff auf {{details.buildTitle(details.document)}}</h3>
 		<p>gemeldet am {{details.document._creation_date | date : 'medium' }}</p>
 		<br>
 	</div>
-	<div class="details-part">
-		<div class="line"><span>Zeitlicher Rahmen des Angriffs</span></div>
-			<p><b>Entdeckungszeitpunkt: </b>{{details.getField('vorfall.entdeckungszeitpunkt.date') | date: 'dd.MM.yyyy'}}, {{details.getField('vorfall.entdeckungszeitpunkt.time') | date: 'shortTime'}}<p>
-			<p><b>Startzeitpunkt: </b>{{details.getField('vorfall.startzeitpunkt.date') | date: 'dd.MM.yyyy'}}, {{details.getField('vorfall.startzeitpunkt.time') | date: 'shortTime'}}<p>
-			<p><b>Endzeitpunkt: </b>{{details.getField('vorfall.endzeitpunkt.date') | date: 'dd.MM.yyyy'}}, {{details.getField('vorfall.endzeitpunkt.time') | date: 'shortTime'}}<p>
+	<div class="grey container-fluid">
+		<div class="container details-part">
+			<div class="line"><span>Zeitlicher Rahmen des Angriffs</span></div>
+				<p><b>Entdeckungszeitpunkt: </b>{{details.getField('vorfall.entdeckungszeitpunkt.date') | date: 'dd.MM.yyyy'}}, {{details.getField('vorfall.entdeckungszeitpunkt.time') | date: 'shortTime'}}<p>
+				<p><b>Startzeitpunkt: </b>{{details.getField('vorfall.startzeitpunkt.date') | date: 'dd.MM.yyyy'}}, {{details.getField('vorfall.startzeitpunkt.time') | date: 'shortTime'}}<p>
+				<p><b>Endzeitpunkt: </b>{{details.getField('vorfall.endzeitpunkt.date') | date: 'dd.MM.yyyy'}}, {{details.getField('vorfall.endzeitpunkt.time') | date: 'shortTime'}}<p>
+		</div>
 	</div>
-	<div class="details-part">
+	<div class="container details-part">
 		<div class="line"><span>Angriffsbeschreibung - Das ist vorgefallen</span></div>
 			<p><b>Angriffsvektor: </b><span class="badge badge-danger" ng-repeat="item in details.getField('angriff.vektor')">{{item}}</span><p>
 			<blockquote>
@@ -28,10 +30,12 @@
 				<small>Autor</small>
 			</blockquote>
 	</div>
-	<div class="details-part">
-		<div class="line"><span>Schwachstelle - CVE</span></div>
+	<div class="grey container-fluid">
+		<div class="container details-part">
+			<div class="line"><span>Schwachstelle - CVE</span></div>
+		</div>
 	</div>
-	<div class="details-part">
+	<div class="container details-part">
 		<div class="line"><span>Den Angriff erkennen</span></div>
 		<p>Auf folgende Weise wurde der Angriff durch <b><span class="auswahl">{{details.getField('angriff.festgestelltDurch')}}</span></b> erkannt</p>
 		<blockquote>
@@ -39,16 +43,18 @@
 			<small>Autor</small>
 		</blockquote>
 	</div>
-	<div class="details-part">
-		<div class="line"><span>Lösung</span></div>
-		<p ng-show="details.getField('angriff.behoben') == 'Ja'">Die Ursachen des Angriffs wurden <b>behoben</b></p>
-		<p ng-show="details.getField('angriff.behoben') == 'Nein'">Die Ursachen des Angriffs wurden <b>nicht</b> behoben</p>
-		<p>Eingeschätzter Aufwand zur Behebung der Usache: <b>{{details.getField('angriff.aufwandBehebung')}}</b></p>
-		<p>Folgende Maßnahmen wurden ergriffen um den Ursachen entgegenzugehen: </p>
-		<blockquote>
-			<p><i>{{details.getField('angriff.massnahmenErgriffen')}}</i><p>
-			<small>Autor</small>
-		</blockquote>
+	<div class="grey container-fluid">
+		<div class="container details-part">
+			<div class="line"><span>Lösung</span></div>
+			<p ng-show="details.getField('angriff.behoben') == 'Ja'">Die Ursachen des Angriffs wurden <b>behoben</b></p>
+			<p ng-show="details.getField('angriff.behoben') == 'Nein'">Die Ursachen des Angriffs wurden <b>nicht</b> behoben</p>
+			<p>Eingeschätzter Aufwand zur Behebung der Usache: <b>{{details.getField('angriff.aufwandBehebung')}}</b></p>
+			<p>Folgende Maßnahmen wurden ergriffen um den Ursachen entgegenzugehen: </p>
+			<blockquote>
+				<p><i>{{details.getField('angriff.massnahmenErgriffen')}}</i><p>
+				<small>Autor</small>
+			</blockquote>
+		</div>
 	</div>
 	<a ng-href="mailto:{{details.document.kontakt.email}}"><div class="btn btn-warning btn-block">Autor kontaktieren</div></a>
 </div>
