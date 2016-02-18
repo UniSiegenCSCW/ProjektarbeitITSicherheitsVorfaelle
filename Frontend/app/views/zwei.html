@@ -51,12 +51,14 @@
 				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.cia.title}}" popover-placement="left" uib-popover="{{zwei.popoverText.cia.text}}" popover-trigger="mouseenter"></span>
 				<label class="question">Hat der Vorfall Auswirkungen auf die Integrität, Vertraulichkeit oder Verfügbarkeit ihrer Systeme?</label>
 				<div class="pull-right">
+					<form clas="form-inline">
 					<label class="radio-inline">
 						<input type="radio" name="Ja" class="iradio_flat" ng-model="super.data.vorfall.cia" value="ja" ><label>Ja</label>
 					</label>
 					<label class="radio-inline">
 						<input type="radio" name="Nein" class="iradio_flat" ng-model="super.data.vorfall.cia" value="nein" checked><label>Nein</label>
 					</label>
+					</form>
 				</div>
 			</div>
 		</div>
