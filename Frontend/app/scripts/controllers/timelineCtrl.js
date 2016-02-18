@@ -15,7 +15,6 @@ angular.module('kritisformularApp')
   	this.getAllDocuments = function(){
   		$baasbox.searchForDocuments('incidents', '')
   			.then(function(result){
-          console.log(result);
   				$scope.timeline.allDocuments = result;
   			},function(err){
   				console.log(err);

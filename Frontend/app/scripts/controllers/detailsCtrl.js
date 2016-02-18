@@ -32,9 +32,6 @@ angular.module('kritisformularApp')
           for (var key in obj) {
             if(typeof obj[key] === 'object'){
               if(obj[key].checked === true){
-                //var newObj = {}
-                //newObj[key] = obj[key].optionenChecked;
-                //badgeArray.push(newObj);
                 if(obj[key].optionenChecked != undefined){
                   if(obj[key].optionenChecked.length > 0){
                     for(var item in obj[key].optionenChecked){

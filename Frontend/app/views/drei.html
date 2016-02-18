@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="formHead">
 		<h3>Angriff</h3>
-		<p>Hier haben Sie die Möglichkeit den IT-Sicherheitsvorfall näher zu beschreiben</p>
+		<p>Hier haben Sie die Möglichkeit näher zu beschreiben wie der Angriff stattgefunden hat</p>
 	</div>
 
 	<h4>Wie wurde der Angriff erkannt?</h4>
@@ -15,7 +15,6 @@
 			</form>
 		</div>
 		<div class="form-group">
-			{{super.data.angriff.festgestelltDurch}}
 				<div class="festgestelltDetails" ng-hide="super.data.angriff.festgestelltDurch == 'Keine' || super.data.angriff.festgestelltDurch == ''">
 					<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{drei.popoverText.festgestelltDurch.title}}" popover-placement="left" uib-popover="{{drei.popoverText.festgestelltDurch.text}}" popover-trigger="mouseenter"></span>
 					<label class="question">Können Sie genauer beschreiben, wie <span class="auswahl">{{super.data.angriff.festgestelltDurch}}</span> den Angriff festgestellt hat?</label>
@@ -56,11 +55,11 @@
 			</div>
 			<div class="checkbox-line">
 				<input type="checkbox" ng-checked="super.data.angriff.vektor.usb.checked" ng-model="super.data.angriff.vektor.usb.checked"></input>
-				<label>USB Geräte (Speichermedien, Handy, etc.):</label>
+				<label>USB Geräte (Speichermedien, Handy, etc.)</label>
 			</div>
 			<div class="checkbox-line">
 				<input type="checkbox" ng-checked="super.data.angriff.vektor.email.checked" ng-model="super.data.angriff.vektor.email.checked"></input>
-				<label>E-Mail (SPAM, Anhänge, etc.):</label>
+				<label>E-Mail (SPAM, Anhänge, etc.)</label>
 			</div>
 			<div class="checkbox-badge">
 				<input type="checkbox" ng-checked="super.data.angriff.vektor.evalCheck.checked" ng-model="super.data.angriff.vektor.evalCheck.checked"></input>
@@ -73,7 +72,7 @@
 			</div>
 			<div class="checkbox-line">
 				<input type="checkbox" ng-checked="super.data.angriff.vektor.botnetz.checked" ng-model="super.data.angriff.vektor.botnetz.checked"></input>
-				<label>Botnetz:</label>
+				<label>Botnetz</label>
 			</div>
 			<div class="checkbox-badge">
 				<input type="checkbox" ng-checked="super.data.angriff.vektor.identTheft.checked" ng-model="super.data.angriff.vektor.identTheft.checked"></input>
@@ -164,21 +163,27 @@
 			</form>
 			<div class="input-line">
 				<label class="radio-inline">
+					<form>
 					<div class="cveEmpfehlungen" ng-repeat="item in drei.cveEmpfehlungsArray | orderBy:'-Published'">
-					<input type="radio" class="iradio_flat" ng-model="super.data.angriff.empfehlung" value="{{item.id}}" ></input>
-					<div class="jumbotron cve-jumbotron">
-						<h5>{{item.id}}</h5>
-						<p>{{item.summary}}</p>					
-						<p class="weitere-infos">Weitere Informationen:</p>
-						<ul>
-							<li ng-repeat="listItem in item.references track by $index">{{listItem}}</li>
-						</ul>
+						<input type="radio" class="iradio_flat" ng-model="super.data.angriff.empfehlung" value="{{item.id}}" ></input>
+						<div class="jumbotron cve-jumbotron">
+							<h5>{{item.id}}</h5>
+							<p>{{item.summary}}</p>					
+							<p class="weitere-infos">Weitere Informationen:</p>
+							<ul>
+								<li ng-repeat="listItem in item.references track by $index">{{listItem}}</li>
+							</ul>
+						</div>
 					</div>
-				</div>
+					</form>
 			</div>
 			<div class="input-line">
 				<label class="question-top">Kennen Sie den <a href="https://cve.mitre.org/" target="_blank">CVE-Eintrag</a> zu der Schwachstelle?</label>
 				<input type="text" class="form-control" placeholder="CVE-ID" ng-model="super.data.angriff.cveEigenerEintrag"></input>
+			</div>
+			<div class="checkbox-line">
+				<label class="question">Sonstige Angaben</label>
+				<textarea ng-model="super.data.angriff.cveSonstiges" id="text" name="text" cols="75" rows="4"></textarea> 
 			</div>
 			<form class="form-inline">
 				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.reaktion.title}}" popover-placement="left" uib-popover="{{drei.popoverText.reaktion.text}}" popover-trigger="mouseenter"></span><label class="question">Wie haben Sie auf den Angriff reagiert?</label>

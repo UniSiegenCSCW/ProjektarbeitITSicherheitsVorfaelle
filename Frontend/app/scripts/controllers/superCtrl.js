@@ -50,6 +50,7 @@ angular.module('kritisformularApp')
             vektor : {
                 miskonfiguration : {
                     checked : false,
+                    text : "Misskonfiguration",
                     optionenChecked : []
                 },
                 usb : {
@@ -64,6 +65,7 @@ angular.module('kritisformularApp')
                 },
                 evalCheck : {
                     checked : false,
+                    text : "Unzureichende Eingabevalidierung",
                     optionenChecked : []
                 },
                 botnetz : {
@@ -73,6 +75,7 @@ angular.module('kritisformularApp')
                 },
                 identTheft : {
                     checked : false,
+                    text : "Identitätsdiebstahl",
                     optionenChecked : []
                 },
                 ausnutzenSichlueck : {
@@ -90,6 +93,7 @@ angular.module('kritisformularApp')
             art : {
                 schadprogramm : {
                     checked : false,
+                    text : "Schadprogramm",
                     optionenChecked : []
                 },
                 dos : {
@@ -141,7 +145,7 @@ angular.module('kritisformularApp')
             SystemHersteller : "",
             SystemProdukt : "",
             systemBeschreibungSonstiges : "",
-            cveEmpfehlung : "",
+            empfehlung : "",
             cveEigenerEintrag : "",
             massnahmenErgriffen : "",
             aufwandBehebung : "",

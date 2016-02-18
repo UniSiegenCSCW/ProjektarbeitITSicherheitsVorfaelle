@@ -1,5 +1,5 @@
 <div class="header">
-  <div class="navbar navbar-default" role="navigation" ng-if="head.getCurrentLocation() == '/'">
+  <!--<div class="navbar navbar-default" role="navigation" ng-if="head.getCurrentLocation() == '/'">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
@@ -20,7 +20,7 @@
         </ul>
       </div>
     </div>
-  </div>
+  </div>-->
   <div ng-if="head.isReport()">
     <div class="header-container">
       <a href="#/eins"><div class="circle-container">
@@ -35,10 +35,10 @@
         <li ng-class="{'active' : head.getCurrentLocation() == '/drei'}">3</li>
         <span>Angriffsinformationen</span>
       </div></a>
-      <div class="circle-container">
+      <a href="#/fertig"><div class="circle-container">
         <li ng-class="{'active' : head.getCurrentLocation() == '/fertig'}">4</li>
         <span>Überprüfen</span>
-      </div>
+      </div></a>
     </div>
   </div>
   <div ng-if="head.getCurrentLocation() == '/timeline'">

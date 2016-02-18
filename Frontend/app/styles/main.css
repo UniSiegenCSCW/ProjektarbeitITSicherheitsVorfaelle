@@ -79,7 +79,7 @@ h5 {
   text-align: center;
   line-height: 4em;
   border-radius: 3em;
-  background: #656D78;
+  background: #B3B3B3;
   margin: 0 6em;
   display: inline-block;
   color: white;
@@ -135,6 +135,14 @@ h5 {
 
 .grey {
   background-color: #efefef;
+}
+
+.light-green {
+  background-color: #D0FFE5;
+}
+
+.light-red {
+  background-color: #F5E4E4;
 }
 
 .inline {

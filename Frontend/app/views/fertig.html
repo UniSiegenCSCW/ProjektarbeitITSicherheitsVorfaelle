@@ -1,56 +1,64 @@
 <div class="details-container">
 	<div class="container details-head">
-		<h3>Zusammenfassung</h3>
+		<h3>Zusammenfassung Ihrer Angaben</h3>
 		<br>
 	</div>
 	<div class="grey container-fluid">
 		<div class="container details-part">
 			<div class="line"><span>Zeitlicher Rahmen des Angriffs</span></div>
-				<p><b>Entdeckungszeitpunkt: </b>{{super.details.getField('super.data.vorfall.entdeckungszeitpunkt.date') | date: 'dd.MM.yyyy'}}, {{details.getField('vorfall.entdeckungszeitpunkt.time') | date: 'shortTime'}}<p>
-				<p><b>Startzeitpunkt: </b>{{details.getField('vorfall.startzeitpunkt.date') | date: 'dd.MM.yyyy'}}, {{details.getField('vorfall.startzeitpunkt.time') | date: 'shortTime'}}<p>
-				<p><b>Endzeitpunkt: </b>{{details.getField('vorfall.endzeitpunkt.date') | date: 'dd.MM.yyyy'}}, {{details.getField('vorfall.endzeitpunkt.time') | date: 'shortTime'}}<p>
+				<p><b>Entdeckungszeitpunkt: </b>{{fertig.getField('vorfall.entdeckungszeitpunkt.date') | date: 'dd.MM.yyyy'}}, {{fertig.getField('vorfall.entdeckungszeitpunkt.time') | date: 'shortTime'}}<p>
+				<p><b>Startzeitpunkt: </b>{{fertig.getField('vorfall.startzeitpunkt.date') | date: 'dd.MM.yyyy'}}, {{fertig.getField('vorfall.startzeitpunkt.time') | date: 'shortTime'}}<p>
+				<p ng-show="fertig.getField('vorfall.dauertAn') == 'nein'"><b>Endzeitpunkt: </b>{{fertig.getField('vorfall.endzeitpunkt.date') | date: 'dd.MM.yyyy'}}, {{fertig.getField('vorfall.endzeitpunkt.time') | date: 'shortTime'}}<p>
 		</div>
 	</div>
 	<div class="container details-part">
 		<div class="line"><span>Angriffsbeschreibung - Das ist vorgefallen</span></div>
-			<p><b>Angriffsvektor: </b><span class="badge badge-danger" ng-repeat="item in details.getField('angriff.vektor')">{{item}}</span><p>
+			<p><b>Angriffsvektor: </b><span class="badge badge-danger" ng-repeat="item in fertig.getField('angriff.vektor')">{{item}}</span><p>
 			<blockquote>
-				<p><i>{{details.getField('angriff.vektor.ermoeglichtBeschreibungSonstiges')}}</i><p>
+				<p><i>{{fertig.getField('angriff.vektor.ermoeglichtBeschreibungSonstiges')}}</i><p>
 				<small>Autor</small>
 			</blockquote>
-			<p><b>Angriffsart: </b><span class="badge badge-danger" ng-repeat="item in details.getField('angriff.art')">{{item}}</span><p>
+			<p><b>Angriffsart: </b><span class="badge badge-danger" ng-repeat="item in fertig.getField('angriff.art')">{{item}}</span><p>
 			<blockquote>
-				<p><i>{{details.getField('angriff.art.artBeschreibungSonstiges')}}</i><p>
+				<p><i>{{fertig.getField('angriff.art.artBeschreibungSonstiges')}}</i><p>
 				<small>Autor</small>
 			</blockquote>
-			<p><b>Angriffszweck: </b><span class="badge badge-danger" ng-repeat="item in details.getField('angriff.zweck')">{{item}}</span></p>
+			<p><b>Angriffszweck: </b><span class="badge badge-danger" ng-repeat="item in fertig.getField('angriff.zweck')">{{item}}</span></p>
 			<blockquote>
-				<p><i>{{details.getField('angriff.zweck.zweckBeschreibungSonstiges')}}</i><p>
+				<p><i>{{fertig.getField('angriff.zweck.zweckBeschreibungSonstiges')}}</i><p>
 				<small>Autor</small>
 			</blockquote>
 	</div>
 	<div class="grey container-fluid">
 		<div class="container details-part">
-			<div class="line"><span>Schwachstelle - CVE</span></div>
+			<div class="line"><span>Schwachstelle im System/Anwendung</span></div>
+			<p ng-show="fertig.getField('angriff.SystemHersteller') != '---'">Das System <b>{{fertig.getField('angriff.SystemHersteller')}} {{fertig.getField('angriff.SystemProdukt')}}<b> wurde angegriffen</p>
+			<p ng-show="fertig.getField('angriff.cveEigenerEintrag') != '---'">Es wurde <u>manuell</u> ein CVE-Eintrag identifiziert: {{fertig.getField('angriff.cveEigenerEintrag')}}</p>
+			<p ng-show="fertig.getField('angriff.empfehlung') != '---'">Es wurde ein <u>vorgeschlagener</u> CVE-Eintrag idntifiziert: {{fertig.getField('angriff.empfehlung')}}</p>
+			<blockquote>
+				<p><i>{{fertig.getField('angriff.massnahmenErgriffen')}}</i><p>
+				<small>Autor</small>
+			</blockquote>
 		</div>
 	</div>
 	<div class="container details-part">
 		<div class="line"><span>Den Angriff erkennen</span></div>
-		<p>Auf folgende Weise wurde der Angriff durch <b><span class="auswahl">{{details.getField('angriff.festgestelltDurch')}}</span></b> erkannt</p>
+		<p>Auf folgende Weise wurde der Angriff durch <b><span class="auswahl">{{fertig.getField('angriff.festgestelltDurch')}}</span></b> erkannt</p>
 		<blockquote>
-			<p><i>{{details.getField('angriff.festgestelltDurchDetails')}}</i><p>
+			<p><i>{{fertig.getField('angriff.festgestelltDurchDetails')}}</i><p>
 			<small>Autor</small>
 		</blockquote>
 	</div>
-	<div class="grey container-fluid">
+	<div ng-class="fertig.getField('angriff.behoben') == 'Ja' ? 'light-green' : (fertig.getField('angriff.behoben') == 'Nein' ? 'light-red' : 'grey')" class="container-fluid">
 		<div class="container details-part">
 			<div class="line"><span>Lösung</span></div>
-			<p ng-show="details.getField('angriff.behoben') == 'Ja'">Die Ursachen des Angriffs wurden <b>behoben</b></p>
-			<p ng-show="details.getField('angriff.behoben') == 'Nein'">Die Ursachen des Angriffs wurden <b>nicht</b> behoben</p>
-			<p>Eingeschätzter Aufwand zur Behebung der Usache: <b>{{details.getField('angriff.aufwandBehebung')}}</b></p>
+			<p ng-show="fertig.getField('angriff.behoben') == 'Ja'">Die Ursachen des Angriffs wurden <b>behoben</b></p>
+			<p ng-show="fertig.getField('angriff.behoben') == 'Teilweise'">Die Ursachen des Angriffs wurden <b>teilweise behoben</b></p>
+			<p ng-show="fertig.getField('angriff.behoben') == 'Nein'">Die Ursachen des Angriffs wurden <b>nicht</b> behoben</p>
+			<p>Eingeschätzter Aufwand zur Behebung der Usache: <b>{{fertig.getField('angriff.aufwandBehebung')}}</b></p>
 			<p>Folgende Maßnahmen wurden ergriffen um den Ursachen entgegenzugehen: </p>
 			<blockquote>
-				<p><i>{{details.getField('angriff.massnahmenErgriffen')}}</i><p>
+				<p><i>{{fertig.getField('angriff.massnahmenErgriffen')}}</i><p>
 				<small>Autor</small>
 			</blockquote>
 		</div>
