@@ -32,11 +32,11 @@ angular.module('kritisformularApp')
       },
       funktionaleAuswirkungen : {
         title : "Funktionale Auswirkungen",
-        text : "HOCH: Die Funktionsweise von kritischen Diensten wurde für ALLE Nutzer eingeschränkt\nMITTEL: Die Funktionsweise von kritischen Diensten wurde für EINIGE Nutzer eingeschränkt\nNIEDRIG: Alle Dienste sind für alle Nutzer verfügbar, es bestehen Einschränkungen in der Perfomanz der Dienste\nKEINE Es bestehen keinerlei Einschränkungen bezüglich der Nutzung aller Dienste"
+        text : "HOCH: Die Funktionsweise von kritischen Diensten wurde für ALLE Nutzer eingeschränkt<br><br>MITTEL: Die Funktionsweise von kritischen Diensten wurde für EINIGE Nutzer eingeschränkt<br><br>NIEDRIG: Alle Dienste sind für alle Nutzer verfügbar, es bestehen Einschränkungen in der Perfomanz der Dienste<br><br>KEINE Es bestehen keinerlei Einschränkungen bezüglich der Nutzung aller Dienste"
       },
       unauthZugriffVertrInfo : {
         title : "Zugriff auf Informationen",
-        text : "GEHEIM: Die Vertraulichkeit von streng geheimen Informationen wurde gefährdet<br>GESCHÜTZT: Die Vertraulichkeit von geschützten firmenkritischen Informationen wurde gefährdet<br />PRIVAT: Die Vertraulichkeit von persönlichen Informationen wurde gefährdet<br />INTEGRITÄT: Die notwendige Integrität von Informationen wurde gefährdet<br />KEINE: Keinerlei Informationen wurden gefährdet"
+        text : "GEHEIM: Die Vertraulichkeit von streng geheimen Informationen wurde gefährdet<br><br>GESCHÜTZT: Die Vertraulichkeit von geschützten firmenkritischen Informationen wurde gefährdet<br><br>PRIVAT: Die Vertraulichkeit von persönlichen Informationen wurde gefährdet<br><br>INTEGRITÄT: Die notwendige Integrität von Informationen wurde gefährdet<br><br>KEINE: Keinerlei Informationen wurden gefährdet"
       }
   	}
   	this.auswirkungen = {

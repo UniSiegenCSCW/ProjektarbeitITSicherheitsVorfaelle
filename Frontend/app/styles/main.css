@@ -79,7 +79,7 @@ h5 {
   text-align: center;
   line-height: 4em;
   border-radius: 3em;
-  background: #B3B3B3;
+  background: #FFCE54;
   margin: 0 6em;
   display: inline-block;
   color: white;
@@ -87,7 +87,7 @@ h5 {
 }
 
 .header-container li.active {
-  background: black;
+  background: #434A54;
 }
 
 .header-container li::before {
@@ -97,7 +97,7 @@ h5 {
   left: -8em;
   width: 18em;
   height: .3em;
-  background: #656D78;
+  background: #FFCE54;
   z-index: -1;
 }
 

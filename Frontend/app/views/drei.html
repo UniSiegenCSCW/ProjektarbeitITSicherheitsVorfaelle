@@ -28,7 +28,7 @@
 	<br>
 	<div class="beschreibung col-md-12">
 		<form class="form-inline">
-			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.system.title}}" popover-placement="left" uib-popover="{{drei.popoverText.system.text}}" popover-trigger="mouseenter"></span><label class="question">Welches System wurde angegriffen?</label>
+			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover="{{drei.popoverText.system.text}}" popover-trigger="mouseenter"></span><label class="question">Welches System wurde angegriffen?</label>
 		</form>
 		<div class="input-line">
 			<autocomplete ng-model="super.data.angriff.systemHersteller" attr-placeholder="Hersteller" data="drei.vendorArray" on-type="drei.updateVendors">
@@ -37,12 +37,12 @@
 			<autocomplete ng-model="super.data.angriff.systemProdukt" attr-placeholder="Produkt" data="drei.productArray" on-type="drei.updateProducts">
 		</div>
 		<div class="checkbox-line">
-			<label class="question">Sonstige Angaben</label>
+			<label class="question">Sonstige Angaben / detaillierte Angaben zur Produktversion</label>
 			<textarea ng-model="super.data.angriff.systemBeschreibungSonstiges" id="text" name="text" cols="75" rows="4"></textarea> 
 		</div>
 		<div class="radio-question form-group">
 			<form class="form-inline">
-				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.ermoeglicht.title}}" popover-placement="left" uib-popover="{{drei.popoverText.ermoeglicht.text}}" popover-trigger="mouseenter"></span><label class="question">Wodurch wurde der Angriff ermöglicht?</label>
+				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover-html="{{super.getPopoverContent('drei.popoverText.ermoeglicht.text')}}" popover-trigger="mouseenter"></span><label class="question">Wodurch wurde der Angriff ermöglicht?</label>
 			</form>
 			<div class="checkbox-badge">
 				<input type="checkbox" ng-checked="super.data.angriff.vektor.miskonfiguration.checked" ng-model="super.data.angriff.vektor.miskonfiguration.checked"></input>
@@ -96,7 +96,7 @@
 				<textarea ng-model="super.data.angriff.vektor.ermoeglichtBeschreibungSonstiges" id="text" name="text" cols="75" rows="4"></textarea> 
 			</div>
 			<form class="form-inline">
-				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.art.title}}" popover-placement="left" uib-popover="{{drei.popoverText.art.text}}" popover-trigger="mouseenter"></span><label class="question">Welche Art des Angriffes wurde ermöglicht?</label>
+				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover-html="{{super.getPopoverContent('drei.popoverText.art.text')}}" popover-trigger="mouseenter"></span><label class="question">Welche Art des Angriffes wurde ermöglicht?</label>
 			</form>
 			<div class="checkbox-badge">
 				<input type="checkbox" ng-checked="super.data.angriff.art.schadprogramm.checked" ng-model="super.data.angriff.art.schadprogramm.checked"></input>
@@ -159,7 +159,7 @@
 				<textarea ng-model="super.data.angriff.zweck.zweckBeschreibungSonstiges" id="text" name="text" cols="75" rows="4"></textarea> 
 			</div>
 			<form class="form-inline">
-				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.schwachstelle.title}}" popover-placement="left" uib-popover="{{drei.popoverText.schwachstelle.text}}" popover-trigger="mouseenter"></span><label class="question">Können Sie die ausgenutzte Schwachstelle definieren?</label>
+				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover="{{drei.popoverText.schwachstelle.text}}" popover-trigger="mouseenter"></span><label class="question">Können Sie die ausgenutzte Schwachstelle definieren?</label>
 			</form>
 			<div class="input-line">
 				<label class="radio-inline">
@@ -186,7 +186,7 @@
 				<textarea ng-model="super.data.angriff.cveSonstiges" id="text" name="text" cols="75" rows="4"></textarea> 
 			</div>
 			<form class="form-inline">
-				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.reaktion.title}}" popover-placement="left" uib-popover="{{drei.popoverText.reaktion.text}}" popover-trigger="mouseenter"></span><label class="question">Wie haben Sie auf den Angriff reagiert?</label>
+				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover="{{drei.popoverText.reaktion.text}}" popover-trigger="mouseenter"></span><label class="question">Wie haben Sie auf den Angriff reagiert?</label>
 			</form>
 			<div class="checkbox-line">
 				<label class="question">Welche Maßnahmen wurden ergriffen?</label>

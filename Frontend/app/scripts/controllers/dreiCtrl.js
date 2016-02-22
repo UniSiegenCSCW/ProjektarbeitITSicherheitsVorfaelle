@@ -15,19 +15,19 @@ angular.module('kritisformularApp')
   	this.popoverText = {
   		festgestelltDurch : {
   			title : "Den Angriff erkennen",
-  			text : "Wie sind Sie auf den Angriff aufmerksam geworden?"
+  			text : "Welche Person oder welche Software ist auf den Angriff aufmerksam geworden?"
   		},
       festgestelltDurchDetail : {
         title : "Den Angriff erkennen",
-        text : "Können Sie nachvollziehbar beschreiben, wie der Angriff erkannt wurde?"
+        text : "Beschreiben Sie bitte möglichst genau, wie der Angriff festgestellt wurde, sodass dieser Prozess für andere nachvollziehbar ist!"
       },
       ermoeglicht : {
         title : "Angriffsvektor",
-        text : "MISKONFIGURATION: Der Angriff erfolgte über eine Schwachstelle, die auf einen Konfigurationsfehler zurückzuführen ist?\nUSB GERÄTE: Schädliche Software wurde über ein USB Medium infiltriert.\nE-MAIL: Schädliche Software wurde über eine E-Mail infilitriert.\nUNZUREICHENDE EINGABEVALIDIERUNG: Inputfelder werden nicht ausreichend validiert, sodass schädlicher Code infilitriert werden kann.\nBOTNETZ: Ein großer Zusammenschluss von mit Malware infizierten PCs ermöglicht den Angriff.\nIDENTITÄTSDIEBSTAHL: Der Angriff wurde dadurch ermöglicht, dass sich der Angreifer eine vertrauenswürdige Identität verschafft hat.\nIT-SICHERHEITSLÜCKE: Der Angriff wurde durch einen Design- oder Implementationsfehler eines IT-Produktes ermöglicht.\nSOCIAL ENGINEERING: Personen wurden in einer Weise beeinuflusst, welche den Angriff ermöglicht."
+        text : "MISKONFIGURATION: Der Angriff erfolgte über eine Schwachstelle, die auf einen Konfigurationsfehler zurückzuführen ist?<br><br>USB GERÄTE: Schädliche Software wurde über ein USB Medium infiltriert.<br><br>E-MAIL: Schädliche Software wurde über eine E-Mail infilitriert.<br><br>UNZUREICHENDE EINGABEVALIDIERUNG: Inputfelder werden nicht ausreichend validiert, sodass schädlicher Code infilitriert werden kann.<br><br>BOTNETZ: Ein großer Zusammenschluss von mit Malware infizierten PCs ermöglicht den Angriff.<br><br>IDENTITÄTSDIEBSTAHL: Der Angriff wurde dadurch ermöglicht, dass sich der Angreifer eine vertrauenswürdige Identität verschafft hat.<br><br>IT-SICHERHEITSLÜCKE: Der Angriff wurde durch einen Design- oder Implementationsfehler eines IT-Produktes ermöglicht.<br><br>SOCIAL ENGINEERING: Der Angriff wurde dadurch ermöglicht, dass Personen zu sicherheitskritischen Handlungen gedrängt wurden."
       },
       art : {
         title : "Art des Angriffs",
-        text : "SCHADPROGRAMM: Schädlicher Code wurde infiltriert und wird auf dem betroffenen System ausgeführt.\nDENIAL-OF-SERVICE: (D)DoS ist in der Regel die Folge einer Überbelastung eines Dienstes mithilfe eines Botnetzs.\nBELIEBIGE CODESAUSFÜHRUNG: Der Angreifer hat sich auf eine Weise Zugang verschafft, welche ihn berechtigt beliebigen Code auf dem betroffenen System auszuführen."
+        text : "SCHADPROGRAMM: Schädlicher Code wurde infiltriert und wird auf dem betroffenen System ausgeführt.<br><br>DENIAL-OF-SERVICE: (D)DoS ist in der Regel die Folge einer Überbelastung eines Dienstes mithilfe eines Botnetzs.<br><br>BELIEBIGE CODEAUSFÜHRUNG: Der Angreifer hat sich auf eine Weise Zugang verschafft, welche ihn berechtigt beliebigen Code auf dem betroffenen System auszuführen."
       },
       zweck : {
         title : "Intention",
@@ -39,7 +39,7 @@ angular.module('kritisformularApp')
       },
       schwachstelle : {
         title : "CVE",
-        text : "Lässt sich die Schwachstelle dieses Angriffs durch einen der vorgeschlagenen CVE-Einträge beschreiben? Haben Sie alternativ selbst einen passenden CVE-Eintrag gefunden?"
+        text : "Lässt sich die Schwachstelle dieses Angriffs durch einen der vorgeschlagenen CVE-Einträge beschreiben? Ist Ihnen alternativ ein anderer CVE-Eintrag bekannt?"
       },
       reaktion : {
         title : "Reaktion",
@@ -48,7 +48,7 @@ angular.module('kritisformularApp')
   	}
 
   	this.festgestelltDurch = {
-  		optionen : ["Administrator", "Intrusion Detection System", "Benutzer", "Keine"]
+  		optionen : ["Administrator", "Benutzer", "Intrusion Detection System", "Anti-Viren-Software", "Keine"]
   	};
 
     this.miskonfiguration = {
