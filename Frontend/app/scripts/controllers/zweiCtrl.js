@@ -12,37 +12,37 @@ angular.module('kritisformularApp')
   	this.popoverText = {
   		entdeckungszeitpunkt : {
   			title : "Entdeckungszeitpunkt",
-  			text : "Der Zeitpunkt an dem der Vorfall entdeckt wurde"
+  			text : "Zu welchem Zeitpunkt sind Sie auf den Vorfall aufmerksam geworden?"
   		},
   		startzeitpunkt : {
   			title : "Startzeitpunkt",
-  			text : "Hierbei handelt es sich um den Zeitpunkt, an dem der Vorfall begonnen hat"
+  			text : "Können Sie den Zeitpunkt bestimmen, an dem der Vorfall angefangen hat?"
   		},
       dauertAn : {
         title : "Dauert an",
         text : "Dauert der Vorfall aktuell noch an?"
       },
       endzeitpunkt : {
-        title : "Title",
-        text : "Text"
+        title : "Endzeitpunkt",
+        text : "Können Sie den Zeitpunkt bestimmen, an dem Verfall geendet hat?"
       },
       cia : {
-        title : "Title",
-        text : "Text"
+        title : "Vertraulichkeit, Integrität, Verfügbarkeit",
+        text : "Gab es unauthorisierten Zugriff auf vertrauliche Daten? Wurden Daten oder Systeme unauthorisiert modifiziert? Wurde die Verwendung von Daten oder Systemen beeinträchtigt?"
       },
       funktionaleAuswirkungen : {
-        title : "Title",
-        text : "Text"
+        title : "Funktionale Auswirkungen",
+        text : "HOCH: Die Funktionsweise von kritischen Diensten wurde für ALLE Nutzer eingeschränkt\nMITTEL: Die Funktionsweise von kritischen Diensten wurde für EINIGE Nutzer eingeschränkt\nNIEDRIG: Alle Dienste sind für alle Nutzer verfügbar, es bestehen Einschränkungen in der Perfomanz der Dienste\nKEINE Es bestehen keinerlei Einschränkungen bezüglich der Nutzung aller Dienste"
       },
       unauthZugriffVertrInfo : {
-        title : "Title",
-        text : "Text"
+        title : "Zugriff auf Informationen",
+        text : "GEHEIM: Die Vertraulichkeit von streng geheimen Informationen wurde gefährdet\nGESCHÜTZT: Die Vertraulichkeit von geschützten firmenkritischen Informationen wurde gefährdet\nPRIVAT: Die Vertraulichkeit von persönlichen Informationen wurde gefährdet\nINTEGRITÄT: Die notwendige Integrität von Informationen wurde gefährdet\nKEINE: Keinerlei Informationen wurden gefährdet"
       }
   	}
   	this.auswirkungen = {
   		optionen : ["Hoch", "Mittel", "Niedrig", "Keine"]
   	};
   	this.unauthZugriffVertrInfo = {
-  		optionen : ["Noch aendern 1", "Noch aendern 2", "Noch aendern 3", "Kein Zugriff"]
+  		optionen : ["Geheim", "Geschützt", "Privat", "Integrität", "Keine"]
   	};
   });

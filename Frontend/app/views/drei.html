@@ -9,14 +9,14 @@
 	<div class="erkannt col-md-12">
 		<div class="select-question form-group">
 			<form class="form-inline">
-				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{drei.popoverText.festgestelltDurch.title}}" popover-placement="left" uib-popover="{{drei.popoverText.festgestelltDurch.text}}" popover-trigger="mouseenter"></span>
+				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover="{{drei.popoverText.festgestelltDurch.text}}" popover-trigger="mouseenter"></span>
 				<label class="question">Wodurch ist der Angriff festgestellt worden?</label>
 				<select class="form-control pull-right" ng-model="super.data.angriff.festgestelltDurch" ng-options="o as o for o in drei.festgestelltDurch.optionen"></select>
 			</form>
 		</div>
 		<div class="form-group">
 				<div class="festgestelltDetails" ng-hide="super.data.angriff.festgestelltDurch == 'Keine' || super.data.angriff.festgestelltDurch == ''">
-					<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{drei.popoverText.festgestelltDurch.title}}" popover-placement="left" uib-popover="{{drei.popoverText.festgestelltDurch.text}}" popover-trigger="mouseenter"></span>
+					<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover="{{drei.popoverText.festgestelltDurchDetail.text}}" popover-trigger="mouseenter"></span>
 					<label class="question">Können Sie genauer beschreiben, wie <span class="auswahl">{{super.data.angriff.festgestelltDurch}}</span> den Angriff festgestellt hat?</label>
 					<textarea ng-model="super.data.angriff.festgestelltDurchDetails" id="text" name="text" cols="75" rows="4"></textarea> 
 				</div>
@@ -120,7 +120,7 @@
 				<textarea ng-model="super.data.angriff.art.artBeschreibungSonstiges" id="text" name="text" cols="75" rows="4"></textarea> 
 			</div>
 			<form class="form-inline">
-				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.art.title}}" popover-placement="left" uib-popover="{{drei.popoverText.art.text}}" popover-trigger="mouseenter"></span><label class="question">Welcher Zweck wurde durch den Angriff (vermutlich) verfolgt?</label>
+				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover="{{drei.popoverText.zweck.text}}" popover-trigger="mouseenter"></span><label class="question">Welcher Zweck wurde durch den Angriff (vermutlich) verfolgt?</label>
 			</form>
 			<div class="checkbox-line">
 				<input type="checkbox" ng-checked="super.data.angriff.zweck.zweckErpressung.checked" ng-model="super.data.angriff.zweck.zweckErpressung.checked"></input>

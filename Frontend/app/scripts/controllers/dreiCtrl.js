@@ -14,20 +14,36 @@ angular.module('kritisformularApp')
 
   	this.popoverText = {
   		festgestelltDurch : {
-  			title : "Title",
-  			text : "Text"
+  			title : "Den Angriff erkennen",
+  			text : "Wie sind Sie auf den Angriff aufmerksam geworden?"
   		},
+      festgestelltDurchDetail : {
+        title : "Den Angriff erkennen",
+        text : "Können Sie nachvollziehbar beschreiben, wie der Angriff erkannt wurde?"
+      },
+      ermoeglicht : {
+        title : "Angriffsvektor",
+        text : "MISKONFIGURATION: Der Angriff erfolgte über eine Schwachstelle, die auf einen Konfigurationsfehler zurückzuführen ist?\nUSB GERÄTE: Schädliche Software wurde über ein USB Medium infiltriert.\nE-MAIL: Schädliche Software wurde über eine E-Mail infilitriert.\nUNZUREICHENDE EINGABEVALIDIERUNG: Inputfelder werden nicht ausreichend validiert, sodass schädlicher Code infilitriert werden kann.\nBOTNETZ: Ein großer Zusammenschluss von mit Malware infizierten PCs ermöglicht den Angriff.\nIDENTITÄTSDIEBSTAHL: Der Angriff wurde dadurch ermöglicht, dass sich der Angreifer eine vertrauenswürdige Identität verschafft hat.\nIT-SICHERHEITSLÜCKE: Der Angriff wurde durch einen Design- oder Implementationsfehler eines IT-Produktes ermöglicht.\nSOCIAL ENGINEERING: Personen wurden in einer Weise beeinuflusst, welche den Angriff ermöglicht."
+      },
       art : {
-        title : "Title",
-        text : "Text"
+        title : "Art des Angriffs",
+        text : "SCHADPROGRAMM: Schädlicher Code wurde infiltriert und wird auf dem betroffenen System ausgeführt.\nDENIAL-OF-SERVICE: (D)DoS ist in der Regel die Folge einer Überbelastung eines Dienstes mithilfe eines Botnetzs.\nBELIEBIGE CODESAUSFÜHRUNG: Der Angreifer hat sich auf eine Weise Zugang verschafft, welche ihn berechtigt beliebigen Code auf dem betroffenen System auszuführen."
+      },
+      zweck : {
+        title : "Intention",
+        text : "Können Sie feststellen, was die Intention des Angreifers für diesen Angriff gewesen ist?"
       },
       system : {
-        title : "Title",
-        text : "text"
+        title : "Betroffenes System",
+        text : "Welches Produkt von welchem Hersteller ist von diesem Angriff betroffen?"
       },
       schwachstelle : {
-        title : "Title",
-        text : "text"
+        title : "CVE",
+        text : "Lässt sich die Schwachstelle dieses Angriffs durch einen der vorgeschlagenen CVE-Einträge beschreiben? Haben Sie alternativ selbst einen passenden CVE-Eintrag gefunden?"
+      },
+      reaktion : {
+        title : "Reaktion",
+        text : "Beschreiben Sie bitte nachvollziehbar, wie sie reagiert haben, um die Ursache des Angriffs zu beheben."
       }
   	}
 
