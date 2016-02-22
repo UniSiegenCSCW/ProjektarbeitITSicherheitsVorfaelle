@@ -21,8 +21,6 @@ app.post('/cveSearch', function(req, res){
 	var cwe = String(req.body.cwe);
 	var cvss = parseInt(req.body.cvss);
 
-	console.log(vendor + product);
-
 	var options = {
 		uri: 'http://cve.circl.lu/api/search/' + vendor + '/' + product,
 		method: 'GET'
@@ -151,7 +149,6 @@ app.post('/autocompleteProduct', function(req, res){
 			var repl = productArr[index].replace(/_/g, " ");
 			productArrReplaced.push(repl);
 		}
-		console.log(productArrReplaced);
 		res.send(productArrReplaced);
 	  }
 	});

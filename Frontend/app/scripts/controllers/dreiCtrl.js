@@ -48,7 +48,7 @@ angular.module('kritisformularApp')
   	}
 
   	this.festgestelltDurch = {
-  		optionen : ["Administrator", "Intusion Detection System", "Benutzer", "Keine"]
+  		optionen : ["Administrator", "Intrusion Detection System", "Benutzer", "Keine"]
   	};
 
     this.miskonfiguration = {
