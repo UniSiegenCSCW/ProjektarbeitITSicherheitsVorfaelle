@@ -179,4 +179,9 @@ angular.module('kritisformularApp')
       console.log(item);
     }
 
+    //ermöglicht die Darstellung von Zeilenumbrüchen im Popover
+    this.getPopoverContent = function(json) {
+        return json
+    }
+
   });

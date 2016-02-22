@@ -71,7 +71,7 @@
 		</div>
 		<div class="select-question form-group">
 			<form class="form-inline">
-				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.unauthZugriffVertrInfo.title}}" popover-placement="left" uib-popover="{{zwei.popoverText.unauthZugriffVertrInfo.text}}" popover-trigger="mouseenter"></span>
+				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-title="{{zwei.popoverText.unauthZugriffVertrInfo.title}}" popover-placement="left" uib-popover-html="{{super.getPopoverContent('zwei.popoverText.unauthZugriffVertrInfo.text')}}" popover-trigger="mouseenter"></span>
 				<label class="question">Inwiefern bestand unauthorisierter Zugriff auf vertrauliche Informationen?</label>
 				<select class="form-control pull-right" ng-model="super.data.vorfall.unauthZugriffVertrInfo" ng-options="o as o for o in zwei.unauthZugriffVertrInfo.optionen"></select>
 			</form>

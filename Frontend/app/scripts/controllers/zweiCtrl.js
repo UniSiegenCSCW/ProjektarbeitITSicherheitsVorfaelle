@@ -36,7 +36,7 @@ angular.module('kritisformularApp')
       },
       unauthZugriffVertrInfo : {
         title : "Zugriff auf Informationen",
-        text : "GEHEIM: Die Vertraulichkeit von streng geheimen Informationen wurde gefährdet\nGESCHÜTZT: Die Vertraulichkeit von geschützten firmenkritischen Informationen wurde gefährdet\nPRIVAT: Die Vertraulichkeit von persönlichen Informationen wurde gefährdet\nINTEGRITÄT: Die notwendige Integrität von Informationen wurde gefährdet\nKEINE: Keinerlei Informationen wurden gefährdet"
+        text : "GEHEIM: Die Vertraulichkeit von streng geheimen Informationen wurde gefährdet<br>GESCHÜTZT: Die Vertraulichkeit von geschützten firmenkritischen Informationen wurde gefährdet<br />PRIVAT: Die Vertraulichkeit von persönlichen Informationen wurde gefährdet<br />INTEGRITÄT: Die notwendige Integrität von Informationen wurde gefährdet<br />KEINE: Keinerlei Informationen wurden gefährdet"
       }
   	}
   	this.auswirkungen = {
