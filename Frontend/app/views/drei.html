@@ -15,7 +15,7 @@
 			</form>
 		</div>
 		<div class="form-group">
-				<div class="festgestelltDetails" ng-hide="super.data.angriff.festgestelltDurch == 'Keine' || super.data.angriff.festgestelltDurch == ''">
+				<div class="festgestelltDetails" ng-hide="super.data.angriff.festgestelltDurch == 'Unbekannt' || super.data.angriff.festgestelltDurch == ''">
 					<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover="{{drei.popoverText.festgestelltDurchDetail.text}}" popover-trigger="outsideClick"></span>
 					<label class="question">Können Sie genauer beschreiben, wie <span class="auswahl">{{super.data.angriff.festgestelltDurch}}</span> den Angriff festgestellt hat?</label>
 					<textarea ng-model="super.data.angriff.festgestelltDurchDetails" id="text" name="text" cols="75" rows="4"></textarea> 

@@ -52,7 +52,7 @@ angular.module('kritisformularApp')
   	}
 
   	this.festgestelltDurch = {
-  		optionen : ["Administrator", "Benutzer", "Intrusion Detection System", "Anti-Viren-Software", "Keine"]
+  		optionen : ["Administrator", "Benutzer", "Log-Review eines Analysten", "Intrusion Detection System", "Anti-Viren-Software", "Andere", "Unbekannt"]
   	};
 
     this.miskonfiguration = {
