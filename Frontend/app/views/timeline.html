@@ -8,8 +8,8 @@
 					<div class="events">
 					  <div class="events-body">
 						  <a ng-href="#/details/{{document.id}}"><h4 class="events-heading">Angriff auf: {{timeline.buildTitle(document)}}</h4></a>
-						  <span ng-class="{'badge-danger' : 'ja' === document.kontakt.kritis}" class="badge">KRITIS</span>
-						  <span ng-show="{{'Hoch' === document.vorfall.funktionaleAuswirkungen}}" ng-class="{'badge-danger' : 'Hoch' === document.vorfall.funktionaleAuswirkungen}" class="badge">WICHTIG</span>
+						  <span ng-show="{{'ja' === document.kontakt.kritis}}" ng-class="{'badge-danger' : 'ja' === document.kontakt.kritis}" class="badge">KRITIS</span>
+						  <span ng-show="{{'Hoch' === document.vorfall.funktionaleAuswirkungen}}" ng-class="{'badge-danger' : 'Hoch' === document.vorfall.funktionaleAuswirkungen}" class="badge">HOHE AUSWIRKUNGEN</span>
 					  </div>
 				  </div>
 				</dd>
