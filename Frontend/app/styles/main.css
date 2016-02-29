@@ -350,6 +350,10 @@ h5 {
   margin-bottom: 4px;
 }
 
+.form-inline .form-control {
+  width: 130px;
+}
+
 .indent {
   margin-left: 60px;
 }

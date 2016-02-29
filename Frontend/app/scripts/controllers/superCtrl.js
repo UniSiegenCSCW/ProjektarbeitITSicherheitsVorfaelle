@@ -20,6 +20,7 @@ angular.module('kritisformularApp')
             vorname : "",
             nachname : "",
             organisation : "",
+            branche : "",
             organisationRolle : "",
             email : "",
             telefonnummer : "",

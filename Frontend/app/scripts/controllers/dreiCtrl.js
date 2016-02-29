@@ -120,6 +120,7 @@ angular.module('kritisformularApp')
     }
     
     var cveRequestTimeout;
+    console.log(cveRequestTimeout)
     $scope.$watch("super.data.angriff.systemProdukt", function(newValue, oldValue) {
       var cveJsonData = {
         vendor : $scope.super.data.angriff.systemHersteller,
@@ -127,13 +128,16 @@ angular.module('kritisformularApp')
       }
       if(cveRequestTimeout) $timeout.cancel(cveRequestTimeout);
         cveRequestTimeout = $timeout(function() {
+          // zusätzlicher Parameter:
+          // since: 31 Einträge der letzten 31 Tage abrufen
           $http({
             method: 'POST',
             url: 'http://localhost:3000/cveSearch',
-            data: cveJsonData,
-            since: 31 //Einträge der letzten 31 Tage abrufen
+            data: cveJsonData
           }).then(function successCallback(response){
             $scope.drei.cveEmpfehlungsArray = response.data;
+            var cveRequestTimeout = undefined;
+            console.log(cveRequestTimeout);
           }, function errorCallback(error){
             console.log(error);
           });

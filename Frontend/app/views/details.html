@@ -1,7 +1,9 @@
 <div class="details-container">
 	<div class="container details-head">
 		<h3>Angriff auf {{details.buildTitle(details.document)}}</h3>
-		<p>gemeldet am {{details.document._creation_date | date : 'medium' }}</p>
+		<p>Gemeldet am: {{details.document._creation_date | date : 'medium' }}</p>
+		<p>Rolle der meldenden Person: {{details.getField('kontakt.organisationRolle')}}</p>
+		<p>Branche der Organisation: {{details.getField('kontakt.branche')}}</p>
 		<br>
 	</div>
 	<div class="grey container-fluid">

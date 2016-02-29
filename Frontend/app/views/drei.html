@@ -196,13 +196,13 @@
 				<textarea ng-model="super.data.angriff.massnahmenErgriffen" id="text" name="text" cols="75" rows="4"></textarea> 
 			</div>
 			<div class="select-question form-group">
-				<form class="form-inline indent">
+				<form class="form-inline">
 					<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover-html="{{super.getPopoverContent('drei.popoverText.aufwand.text')}}" popover-trigger="outsideClick"></span><label class="question">Wie groß schätzen Sie den Aufwand das System wiederherzustellen?</label>
 					<select class="form-control pull-right" ng-model="super.data.angriff.aufwandBehebung" ng-options="o as o for o in drei.aufwandBehebung.optionen"></select>
 				</form>
 			</div>
 			<div class="select-question form-group" ng-show="super.data.angriff.aufwandBehebung != 'Nicht anzuwenden'">
-				<form class="form-inline indent">
+				<form class="form-inline">
 					<label class="question">Ist das betroffene System bereits wiederhergestellt?</label>
 					<select class="form-control pull-right" ng-model="super.data.angriff.behoben" ng-options="o as o for o in drei.behoben.optionen"></select>
 				</form>
