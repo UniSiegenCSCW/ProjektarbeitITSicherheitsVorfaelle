@@ -23,7 +23,7 @@ angular.module('kritisformularApp')
       },
       ermoeglicht : {
         title : "Angriffsvektor",
-        text : "MISKONFIGURATION: Der Angriff erfolgte über eine Schwachstelle, die auf einen Konfigurationsfehler zurückzuführen ist?<br><br>USB GERÄTE: Schädliche Software wurde über ein USB Medium infiltriert.<br><br>E-MAIL: Schädliche Software wurde über eine E-Mail infilitriert.<br><br>UNZUREICHENDE EINGABEVALIDIERUNG: Inputfelder werden nicht ausreichend validiert, sodass schädlicher Code infilitriert werden kann.<br><br>BOTNETZ: Ein großer Zusammenschluss von mit Malware infizierten PCs ermöglicht den Angriff.<br><br>IDENTITÄTSDIEBSTAHL: Der Angriff wurde dadurch ermöglicht, dass sich der Angreifer eine vertrauenswürdige Identität verschafft hat.<br><br>IT-SICHERHEITSLÜCKE: Der Angriff wurde durch einen Design- oder Implementationsfehler eines IT-Produktes ermöglicht.<br><br>SOCIAL ENGINEERING: Der Angriff wurde dadurch ermöglicht, dass Personen zu sicherheitskritischen Handlungen gedrängt wurden."
+        text : "MISKONFIGURATION: Der Angriff erfolgte über eine Schwachstelle, die auf einen Konfigurationsfehler zurückzuführen ist.<br><br>USB GERÄTE: Schädliche Software wurde über ein USB Medium infiltriert.<br><br>E-MAIL: Schädliche Software wurde über E-Mail infilitriert.<br><br>UNZUREICHENDE EINGABEVALIDIERUNG: Inputfelder werden nicht ausreichend validiert, sodass schädlicher Code infilitriert werden konnte.<br><br>BOTNETZ: Ein großer Zusammenschluss von mit Malware infizierten PCs ermöglichte den Angriff.<br><br>IDENTITÄTSDIEBSTAHL: Der Angriff wurde dadurch ermöglicht, dass sich der Angreifer eine vertrauenswürdige Identität verschafft hat.<br><br>IT-SICHERHEITSLÜCKE: Der Angriff wurde durch einen Design- oder Implementationsfehler eines IT-Produktes ermöglicht.<br><br>SOCIAL ENGINEERING: Der Angriff wurde dadurch ermöglicht, dass Personen zu sicherheitskritischen Handlungen gedrängt wurden."
       },
       art : {
         title : "Art des Angriffs",
@@ -44,6 +44,10 @@ angular.module('kritisformularApp')
       reaktion : {
         title : "Reaktion",
         text : "Beschreiben Sie bitte nachvollziehbar, wie sie reagiert haben, um die Ursache des Angriffs zu beheben."
+      },
+      aufwand : {
+        title : "Aufwand",
+        text: "<b>NICHT WIEDERHERSTELLBAR</b>: Die Wiederherstellung des Systems ist nicht möglich.<br><br><b>EXTERNE HILFE</b>: Die Zeit zur Wiederherstellung ist nicht vorauszusehen, es wird externe Hilfe benötigt.<br><br><b>ERGÄNZENDE RESSOURCEN</b>: Die Zeit zur Wiederherstellung ist mit ergänzenden Ressourcen vorauszusehen.<br><br><b>VORHANDENE RESSOURCEN</b>: Die Zeit zur Wiederherstellung ist mit vorhandenen Ressourcen vorauszusehen.<br><br><b>NICHT ANZUWENDEN</b>: Der Angriff erfordert keine Wiederherstellung."
       }
   	}
 
@@ -70,7 +74,7 @@ angular.module('kritisformularApp')
     }
 
     this.aufwandBehebung = {
-      optionen : ["Hoch", "Mittel", "Gering"]
+      optionen : ["Nicht wiederherstellbar", "Externe Hilfe", "Ergänzende Ressourcen", "Vorhandene Ressourcen", "Nicht anzuwenden"]
     }
 
     this.behoben = {

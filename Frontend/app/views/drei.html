@@ -24,7 +24,7 @@
 	</div>
 	<h4>Wie kann der Angriff näher beschrieben werden?</h4>
 	<hr>
-	<p>Wenn einzelne Aspekte nicht eindeutig zu identifizieren sind, dann bitte alle in Frage kommenden Möglichkeiten ankreuzen!</p>
+	<p class="warning">Wenn einzelne Aspekte der Angriffsbeschreibung nicht eindeutig zu identifizieren sind, dann kreuzen Sie bitte alle in Frage kommenden Möglichkeiten an!</p>
 	<br>
 	<div class="beschreibung col-md-12">
 		<form class="form-inline">
@@ -162,7 +162,7 @@
 				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover="{{drei.popoverText.schwachstelle.text}}" popover-trigger="outsideClick"></span><label class="question">Können Sie die ausgenutzte Schwachstelle definieren?</label>
 			</form>
 			<div ng-show="drei.cveEmpfehlungsArray.length == 0" class="input-line">
-				<label style="margin-top: 15px; margin-bottom: 20px;" class="question-top">Zu dem angegeben Produkt ist kein CVE Eintrag vorhanden</label>
+				<label style="margin-top: 15px; margin-bottom: 20px;" class="question-top noentry">Die Abfrage der CVE Datenbank liefert für das angegebene betroffene System kein passendes Ergebnis</label>
 			</div>
 			<div ng-show="drei.cveEmpfehlungsArray.length > 0" class="input-line">
 				<label class="radio-inline">
@@ -181,7 +181,7 @@
 					</form>
 			</div>
 			<div class="input-line">
-				<label class="question-top">Kennen Sie den <a href="https://cve.mitre.org/" target="_blank">CVE-Eintrag</a> zu der Schwachstelle?</label>
+				<label class="question-top">Kennen Sie alternativ selbst den passenden <a href="https://cve.mitre.org/" target="_blank">CVE-Eintrag</a>?</label>
 				<input type="text" class="form-control" placeholder="CVE-ID" ng-model="super.data.angriff.cveEigenerEintrag"></input>
 			</div>
 			<div class="checkbox-line">
@@ -197,7 +197,7 @@
 			</div>
 			<div class="select-question form-group">
 				<form class="form-inline indent">
-					<label class="question">Wie groß schätzen Sie den Aufwand zur Behebung der Angriffsursache?</label>
+					<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover-html="{{super.getPopoverContent('drei.popoverText.aufwand.text')}}" popover-trigger="outsideClick"></span><label class="question">Wie groß schätzen Sie den Aufwand das System wiederherzustellen?</label>
 					<select class="form-control pull-right" ng-model="super.data.angriff.aufwandBehebung" ng-options="o as o for o in drei.aufwandBehebung.optionen"></select>
 				</form>
 			</div>

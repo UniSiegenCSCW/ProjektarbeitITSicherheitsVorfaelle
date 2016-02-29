@@ -16,15 +16,15 @@ angular.module('kritisformularApp')
   		},
   		startzeitpunkt : {
   			title : "Startzeitpunkt",
-  			text : "Können Sie den Zeitpunkt bestimmen, an dem der Vorfall angefangen hat?"
+  			text : "Welcher ist der frühste Zeitpunkt, auf welchen sich der Vorfall zurückverfolgen lässt?"
   		},
       dauertAn : {
         title : "Dauert an",
-        text : "Dauert der Vorfall aktuell noch an?"
+        text : "Sind zum aktuellen Zeitpunkt noch Aktivitäten des Vorfalls festzustellen?"
       },
       endzeitpunkt : {
         title : "Endzeitpunkt",
-        text : "Können Sie den Zeitpunkt bestimmen, an dem Verfall geendet hat?"
+        text : "Wann wurden die letzten Aktivitäten des Vorfalls festgestellt?"
       },
       cia : {
         title : "Vertraulichkeit, Integrität, Verfügbarkeit",
@@ -32,7 +32,7 @@ angular.module('kritisformularApp')
       },
       funktionaleAuswirkungen : {
         title : "Funktionale Auswirkungen",
-        text : "HOCH: Die Funktionsweise von kritischen Diensten wurde für ALLE Nutzer eingeschränkt<br><br>MITTEL: Die Funktionsweise von kritischen Diensten wurde für EINIGE Nutzer eingeschränkt<br><br>NIEDRIG: Alle Dienste sind für alle Nutzer verfügbar, es bestehen Einschränkungen in der Perfomanz der Dienste<br><br>KEINE Es bestehen keinerlei Einschränkungen bezüglich der Nutzung aller Dienste"
+        text : "HOCH: Die Funktionsweise von kritischen Diensten wurde für ALLE Nutzer eingeschränkt<br><br>MITTEL: Die Funktionsweise von kritischen Diensten wurde für EINIGE Nutzer eingeschränkt<br><br>NIEDRIG: Alle Dienste sind für alle Nutzer verfügbar, es bestehen Einschränkungen in der Perfomanz der Dienste<br><br>KEINE: Es bestehen keinerlei Einschränkungen bezüglich der Nutzung aller Dienste"
       },
       unauthZugriffVertrInfo : {
         title : "Zugriff auf Informationen",
