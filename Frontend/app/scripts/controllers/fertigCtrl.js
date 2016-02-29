@@ -11,8 +11,7 @@ angular.module('kritisformularApp')
   .controller('FertigCtrl', function ($scope) {
 
   	this.document = $scope.super.data
-  	console.log(this.document);
-
+    console.log(this.document);
   	this.getObject = function(obj, field) {
       return obj[field];
     }

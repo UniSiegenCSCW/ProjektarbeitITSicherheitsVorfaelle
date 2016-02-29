@@ -2,6 +2,13 @@
 	<div class="container details-head">
 		<h3>Zusammenfassung Ihrer Angaben</h3>
 		<br>
+	<div ng-show="fertig.getField('kontakt.kritis') == 'ja' && fertig.getField('vorfall.funktionaleAuswirkungen') == 'Mittel' || fertig.getField('vorfall.funktionaleAuswirkungen') == 'Hoch'" class="meldung alert alert-danger">
+		<h3>Meldung an das BSI</h3>
+		<p>Aufgrund Ihrer Angaben im Formular is es zu empfehlen, zu überprüfen ob eine Meldung des IT-Sicherheitsvorfalls an das BSI notwendig ist</p>
+		</br>
+		</br>
+		<p>Mehr Informationen: <u><a href="https://www.bsi.bund.de/DE/DasBSI/Gesetz/IT-Sicherheitsgesetz.html">https://www.bsi.bund.de/DE/DasBSI/Gesetz/IT-Sicherheitsgesetz.html</a></u></p>
+	</div>
 	</div>
 	<div class="grey container-fluid">
 		<div class="container details-part">
@@ -69,6 +76,6 @@
   <p ng-show="super.statusInfo.status == 'error'">Es ist ein Problem beim versenden des Formulars aufgetreten, versuchen Sie es später nocheinmal.</p>
 </div>
 <div class="weiter form-group col-md-12">
-	<a class="btn btn-black btn-block" ng-href="#/fertig" ng-click="super.finish()">Absenden</a>
+	<a class="btn btn-black btn-block" ng-hide="super.statusInfo.feedback" ng-href="#/fertig" ng-click="super.finish()">Absenden</a>
 	<a class="btn btn-default btn-block" target="_self" ng-href="/">Startseite</a>
 </div>

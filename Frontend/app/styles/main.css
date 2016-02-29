@@ -30,7 +30,7 @@ hr {
 }
 
 h3 {
-  text-align: left;
+  text-align: center;
   font-size: 19px;
   font-weight: 400;
   text-transform: uppercase;
@@ -107,6 +107,18 @@ h5 {
   text-align: center;
 }
 
+.meldung {
+  margin-bottom: 25px !important;
+}
+
+.meldung h3 {
+  margin-top: 10px;
+}
+
+.meldung a{
+  color: #a94442;
+}
+
 .timeline dl dd .events {
   padding-bottom: 10px;
 }
@@ -131,6 +143,10 @@ h5 {
 
 .details-head p {
   text-align: left;
+}
+
+.glyphicon-info-sign {
+  cursor: pointer;
 }
 
 .grey {

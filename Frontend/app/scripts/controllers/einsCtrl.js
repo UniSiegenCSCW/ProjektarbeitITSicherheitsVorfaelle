@@ -22,6 +22,10 @@ angular.module('kritisformularApp')
   				title : "Organisation",
   				text : "Um welche Organisation/Firma handelt es sich?"
   			},
+        branche : {
+          title : "Branche",
+          text : "Welcher Branche ist Ihre Organisation zugehörig?"
+        },
   			organisationRolle : {
   				title : "Rolle in der Organisation",
   				text : "Welche Rolle haben Sie in der Organisation?"

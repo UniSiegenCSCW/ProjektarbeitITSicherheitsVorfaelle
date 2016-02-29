@@ -152,7 +152,7 @@ angular.module('kritisformularApp')
             behoben : ""
         }
     };
-
+    
     this.init = function() {
         $baasbox.init({
             url: "http://localhost:9000",
@@ -167,6 +167,7 @@ angular.module('kritisformularApp')
                 if(result.status == 200){
                     $scope.super.statusInfo.feedback = true;
                     $scope.super.statusInfo.status = 'success';
+
                 }
             }, function(err) {
                 if(err.status != 200){

@@ -17,6 +17,7 @@ angular.module('kritisformularApp')
 
     $baasbox.getDocument('incidents', $routeParams.documentId)
       .then(function(result){
+        console.log(result);
         $scope.details.document = result;
 
         $scope.details.buildTitle = function(document){

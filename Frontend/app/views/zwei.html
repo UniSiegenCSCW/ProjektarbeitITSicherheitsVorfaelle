@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="formHead">
-		<h3>Vorfall</h3>
+		<h3>Vorfallinformationen</h3>
 		<p>Hier haben Sie die Möglichkeit den IT-Sicherheitsvorfall näher zu beschreiben</p>
 	</div>
 
@@ -8,7 +8,7 @@
 	<hr>
 	<div class="wann col-md-12">
 		<div class="form-group ">
-				  <span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover="{{zwei.popoverText.entdeckungszeitpunkt.text}}" popover-trigger="mouseenter">
+				  <span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover="{{zwei.popoverText.entdeckungszeitpunkt.text}}" popover-trigger="outsideClick">
 				  </span><label class="descriptionLabel">Entdeckungszeitpunkt</label>
 				  <form class="form-inline">
 					  <input type="date" class="form-control" ng-model="super.data.vorfall.entdeckungszeitpunkt.date" uib-tooltip="Datum" tooltip-trigger="mouseenter" tooltip-placement="left">
@@ -16,7 +16,7 @@
 				 	</form>
 		</div>
 		<div class="form-group">
-				  <span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover="{{zwei.popoverText.startzeitpunkt.text}}" popover-trigger="mouseenter">
+				  <span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover="{{zwei.popoverText.startzeitpunkt.text}}" popover-trigger="outsideClick">
 				  </span><label class="descriptionLabel">Startzeitpunkt</label>
 				  <form class="form-inline">
 					  <input type="date" class="form-control" ng-model="super.data.vorfall.startzeitpunkt.date" uib-tooltip="Datum" tooltip-trigger="mouseenter" tooltip-placement="left">
@@ -24,7 +24,7 @@
 				 	</form>
 		</div>
 		<div class="radio-question form-group">
-			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover="{{zwei.popoverText.dauertAn.text}}" popover-trigger="mouseenter"></span>
+			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover="{{zwei.popoverText.dauertAn.text}}" popover-trigger="outsideClick"></span>
 			<label class="question">Dauert der Vorfall noch an?</label>
 			<div class="pull-right">
 				<label class="radio-inline">
@@ -36,7 +36,7 @@
 			</div>
 		</div>
 		<div class="form-group" ng-show="super.data.vorfall.dauertAn == 'nein'">
-			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true"  popover-placement="left" uib-popover="{{zwei.popoverText.endzeitpunkt.text}}" popover-trigger="mouseenter"></span><label class="descriptionLabel">Endzeitpunkt</label>
+			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true"  popover-placement="left" uib-popover="{{zwei.popoverText.endzeitpunkt.text}}" popover-trigger="outsideClick"></span><label class="descriptionLabel">Endzeitpunkt</label>
 			<form class="form-inline">
 				<input type="date" class="form-control" ng-model="super.data.vorfall.endzeitpunkt.date" uib-tooltip="Datum" tooltip-trigger="mouseenter" tooltip-placement="left">
 				<input type="time" class="form-control" ng-model="super.data.vorfall.endzeitpunkt.time" uib-tooltip="Uhrzeit" tooltip-trigger="mouseenter" tooltip-placement="right">
@@ -48,7 +48,7 @@
 	<div class="auswirkungen col-md-12">
 		<div class="radio-question form-group">
 			<div class="">
-				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover="{{zwei.popoverText.cia.text}}" popover-trigger="mouseenter"></span>
+				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover="{{zwei.popoverText.cia.text}}" popover-trigger="outsideClick"></span>
 				<label class="question">Hat der Vorfall Auswirkungen auf die Vertraulichkeit, Integrität oder Verfügbarkeit ihrer Systeme?</label>
 				<div class="pull-right">
 					<form clas="form-inline">
@@ -62,16 +62,16 @@
 				</div>
 			</div>
 		</div>
-		<div class="select-question form-group">
+		<div class="select-question form-group" ng-show="super.data.vorfall.cia == 'ja'">
 			<form class="form-inline">
-				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover-html="{{super.getPopoverContent('zwei.popoverText.funktionaleAuswirkungen.text')}}" popover-trigger="mouseenter"></span>
+				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover-html="{{super.getPopoverContent('zwei.popoverText.funktionaleAuswirkungen.text')}}" popover-trigger="outsideClick"></span>
 				<label class="question">Wie hoch sind die funktionalen Auswirkungen des Vorfalls?</label>
 				<select class="form-control pull-right" ng-model="super.data.vorfall.funktionaleAuswirkungen" ng-options="o as o for o in zwei.auswirkungen.optionen"></select>
 			</form>
 		</div>
-		<div class="select-question form-group">
+		<div class="select-question form-group" ng-show="super.data.vorfall.cia == 'ja'">
 			<form class="form-inline">
-				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover-html="{{super.getPopoverContent('zwei.popoverText.unauthZugriffVertrInfo.text')}}" popover-trigger="mouseenter"></span>
+				<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" uib-popover-html="{{super.getPopoverContent('zwei.popoverText.unauthZugriffVertrInfo.text')}}" popover-trigger="outsideClick"></span>
 				<label class="question">Inwiefern bestand unauthorisierter Zugriff auf vertrauliche Informationen?</label>
 				<select class="form-control pull-right" ng-model="super.data.vorfall.unauthZugriffVertrInfo" ng-options="o as o for o in zwei.unauthZugriffVertrInfo.optionen"></select>
 			</form>
