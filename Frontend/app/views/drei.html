@@ -201,7 +201,7 @@
 					<select class="form-control pull-right" ng-model="super.data.angriff.aufwandBehebung" ng-options="o as o for o in drei.aufwandBehebung.optionen"></select>
 				</form>
 			</div>
-			<div class="select-question form-group" ng-show="super.data.angriff.aufwandBehebung != 'Nicht anzuwenden'">
+			<div class="select-question form-group" ng-show="super.data.angriff.aufwandBehebung == 'Ergänzende Ressourcen' || super.data.angriff.aufwandBehebung == 'Vorhandene Ressourcen'">
 				<form class="form-inline">
 					<label class="question">Ist das betroffene System bereits wiederhergestellt?</label>
 					<select class="form-control pull-right" ng-model="super.data.angriff.behoben" ng-options="o as o for o in drei.behoben.optionen"></select>

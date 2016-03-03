@@ -47,7 +47,7 @@ angular.module('kritisformularApp')
       },
       aufwand : {
         title : "Aufwand",
-        text: "<b>NICHT WIEDERHERSTELLBAR</b>: Die Wiederherstellung des Systems ist nicht möglich.<br><br><b>EXTERNE HILFE</b>: Die Zeit zur Wiederherstellung ist nicht vorauszusehen, es wird externe Hilfe benötigt.<br><br><b>ERGÄNZENDE RESSOURCEN</b>: Die Zeit zur Wiederherstellung ist mit ergänzenden Ressourcen vorauszusehen.<br><br><b>VORHANDENE RESSOURCEN</b>: Die Zeit zur Wiederherstellung ist mit vorhandenen Ressourcen vorauszusehen.<br><br><b>NICHT ANZUWENDEN</b>: Der Angriff erfordert keine Wiederherstellung."
+        text: "<b>NICHT WIEDERHERSTELLBAR</b>: Die Wiederherstellung des Systems ist nicht möglich.<br><br><b>EXTERNE HILFE</b>: Die Zeit zur Wiederherstellung ist nicht vorauszusehen, es wird externe Hilfe benötigt.<br><br><b>ERGÄNZENDE RESSOURCEN</b>: Die Zeit zur Wiederherstellung ist mit ergänzenden Ressourcen vorauszusehen.<br><br><b>VORHANDENE RESSOURCEN</b>: Die Zeit zur Wiederherstellung ist mit vorhandenen Ressourcen vorauszusehen.<br><br><b>NICHT ANZUWENDEN</b>: Der Angriff erfordert keine Wiederherstellung des betroffenen Systems."
       }
   	}
 

@@ -61,14 +61,18 @@
 			<small>Autor</small>
 		</blockquote>
 	</div>
-	<div ng-class="fertig.getField('angriff.behoben') == 'Ja' ? 'light-green' : (fertig.getField('angriff.behoben') == 'Nein' ? 'light-red' : 'grey')" class="container-fluid">
+	<div ng-class="fertig.getField('angriff.behoben') == 'Ja' || fertig.getField('angriff.aufwandBehebung') == 'Nicht anzuwenden' ? 'light-green' : (fertig.getField('angriff.behoben') == 'Teilweise' ? 'grey' : 'light-red')" class="container-fluid">
 		<div class="container details-part">
 			<div class="line"><span>Lösung</span></div>
-			<p ng-show="fertig.getField('angriff.behoben') == 'Ja'">Die Ursachen des Angriffs wurden <b>behoben</b></p>
-			<p ng-show="fertig.getField('angriff.behoben') == 'Teilweise'">Die Ursachen des Angriffs wurden <b>teilweise behoben</b></p>
-			<p ng-show="fertig.getField('angriff.behoben') == 'Nein'">Die Ursachen des Angriffs wurden <b>nicht</b> behoben</p>
-			<p>Eingeschätzter Aufwand zur Behebung der Usache: <b>{{fertig.getField('angriff.aufwandBehebung')}}</b></p>
-			<p>Folgende Maßnahmen wurden ergriffen um den Ursachen entgegenzugehen: </p>
+			<p ng-show="fertig.getField('angriff.behoben') == 'Ja'">Die Ursachen des Angriffs wurden <b>behoben</b>.</p>
+			<p ng-show="fertig.getField('angriff.behoben') == 'Teilweise'">Die Ursachen des Angriffs wurden <b>teilweise</b>behoben.</p>
+			<p ng-show="fertig.getField('angriff.behoben') == 'Nein'">Die Ursachen des Angriffs wurden <b>nicht</b> behoben.</p>
+			<p ng-show="fertig.getField('angriff.aufwandBehebung') == 'Nicht anzuwenden'">Der Angriff erfordert <b>keine Wiederherstellung</b> des betroffenen Systems.</p>
+			<p ng-show="fertig.getField('angriff.aufwandBehebung') == 'Vorhandene Ressourcen'">Die Zeit zur Wiederherstellung ist mit <b>vorhandenen Ressourcen</b> vorauszusehen.</p>
+			<p ng-show="fertig.getField('angriff.aufwandBehebung') == 'Ergänzende Ressourcen'">Die Zeit zur Wiederherstellung ist mit <b>ergänzenden Ressourcen</b> vorauszusehen.</p>
+			<p ng-show="fertig.getField('angriff.aufwandBehebung') == 'Externe Hilfe'">Die Zeit zur Wiederherstellung ist <b>nicht vorauszusehen</b>, es wird <b>externe Hilfe</b> benötigt.</p>
+			<p ng-show="fertig.getField('angriff.aufwandBehebung') == 'Nicht Wiederherstellbar'">Die Wiederherstellung des Systems ist <b>nicht möglich</b>.</p>
+			<p>Folgende Maßnahmen wurden ergriffen um den Ursachen des Angriffs entgegenzugehen: </p>
 			<blockquote>
 				<p><i>{{fertig.getField('angriff.massnahmenErgriffen')}}</i><p>
 				<small>Autor</small>

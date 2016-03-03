@@ -16,7 +16,12 @@ p {
 }
 
 .warning {
-  color: #f6bb42;
+  color: #FFF;
+  background-color: #aab2bd;
+  border-radius: 3px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 input[type=checkbox] {
@@ -184,6 +189,18 @@ h5 {
   padding: 0 10px;
   font-weight: 200;
   text-transform: uppercase;
+}
+
+.grey span{
+  background-color: #efefef;
+}
+
+.light-green span{
+  background-color: #D0FFE5;
+}
+
+.light-red span{
+  background-color: #F5E4E4;
 }
 
 .details-part {

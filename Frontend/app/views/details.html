@@ -40,11 +40,11 @@
 	<div class="grey container-fluid">
 		<div class="container details-part">
 			<div class="line"><span>Schwachstelle im System/Anwendung</span></div>
-			<p ng-show="details.getField('angriff.SystemHersteller') != '---'">Das System <b>{{fertig.getField('angriff.SystemHersteller')}} {{fertig.getField('angriff.SystemProdukt')}}<b> wurde angegriffen</p>
-			<p ng-show="details.getField('angriff.cveEigenerEintrag') != '---'">Es wurde <u>manuell</u> ein CVE-Eintrag identifiziert: {{fertig.getField('angriff.cveEigenerEintrag')}}</p>
-			<p ng-show="details.getField('angriff.empfehlung') != '---'">Es wurde ein <u>vorgeschlagener</u> CVE-Eintrag idntifiziert: {{fertig.getField('angriff.empfehlung')}}</p>
+			<p ng-show="details.getField('angriff.SystemHersteller') != '---'">Das System <b>{{fertig.getField('angriff.SystemHersteller')}} {{fertig.getField('angriff.SystemProdukt')}}</b> wurde angegriffen</p>
+			<p ng-show="details.getField('angriff.cveEigenerEintrag') != '---'">Es wurde <u>manuell</u> ein CVE-Eintrag identifiziert: <a href="http://www.cvedetails.com/cve-details.php?t=1&cve_id={{details.getField('angriff.cveEigenerEintrag')}}" target="_blank">{{details.getField('angriff.cveEigenerEintrag')}}</a></p>
+			<p ng-show="details.getField('angriff.empfehlung') != '---'">Es wurde ein <u>vorgeschlagener</u> CVE-Eintrag identifiziert: <a href="http://www.cvedetails.com/cve-details.php?t=1&cve_id={{details.getField('angriff.empfehlung')}}" target="_blank">{{details.getField('angriff.empfehlung')}}</a></p>
 			<blockquote>
-				<p><i>{{fertig.getField('angriff.massnahmenErgriffen')}}</i><p>
+				<p><i>{{details.getField('angriff.massnahmenErgriffen')}}</i><p>
 				<small>Autor</small>
 			</blockquote>
 		</div>
@@ -57,14 +57,18 @@
 			<small>Autor</small>
 		</blockquote>
 	</div>
-	<div ng-class="fertig.getField('angriff.behoben') == 'Ja' ? 'light-green' : (fertig.getField('angriff.behoben') == 'Nein' ? 'light-red' : 'grey')" class="container-fluid">
+	<div ng-class="details.getField('angriff.behoben') == 'Ja' || details.getField('angriff.aufwandBehebung') == 'Nicht anzuwenden' ? 'light-green' : (details.getField('angriff.behoben') == 'Teilweise' ? 'grey' : 'light-red')" class="container-fluid">
 		<div class="container details-part">
 			<div class="line"><span>Lösung</span></div>
-			<p ng-show="details.getField('angriff.behoben') == 'Ja'">Die Ursachen des Angriffs wurden <b>behoben</b></p>
-			<p ng-show="fertig.getField('angriff.behoben') == 'Teilweise'">Die Ursachen des Angriffs wurden <b>teilweise behoben</b></p>
-			<p ng-show="details.getField('angriff.behoben') == 'Nein'">Die Ursachen des Angriffs wurden <b>nicht</b> behoben</p>
-			<p>Eingeschätzter Aufwand zur Behebung der Usache: <b>{{details.getField('angriff.aufwandBehebung')}}</b></p>
-			<p>Folgende Maßnahmen wurden ergriffen um den Ursachen entgegenzugehen: </p>
+			<p ng-show="details.getField('angriff.behoben') == 'Ja'">Die Ursachen des Angriffs wurden <b>behoben.</b></p>
+			<p ng-show="details.getField('angriff.behoben') == 'Teilweise'">Die Ursachen des Angriffs wurden <b>teilweise</b> behoben.</p>
+			<p ng-show="details.getField('angriff.behoben') == 'Nein'">Die Ursachen des Angriffs wurden <b>nicht</b> behoben.</p>
+			<p ng-show="details.getField('angriff.aufwandBehebung') == 'Nicht anzuwenden'">Der Angriff erfordert <b>keine Wiederherstellung</b> des betroffenen Systems.</p>
+			<p ng-show="details.getField('angriff.aufwandBehebung') == 'Vorhandene Ressourcen'">Die Zeit zur Wiederherstellung ist mit <b>vorhandenen Ressourcen</b> vorauszusehen.</p>
+			<p ng-show="details.getField('angriff.aufwandBehebung') == 'Ergänzende Ressourcen'">Die Zeit zur Wiederherstellung ist mit <b>ergänzenden Ressourcen</b> vorauszusehen.</p>
+			<p ng-show="details.getField('angriff.aufwandBehebung') == 'Externe Hilfe'">Die Zeit zur Wiederherstellung ist <b>nicht vorauszusehen</b>, es wird <b>externe Hilfe</b> benötigt.</p>
+			<p ng-show="details.getField('angriff.aufwandBehebung') == 'Nicht Wiederherstellbar'">Die Wiederherstellung des Systems ist <b>nicht möglich</b>.</p>
+			<p>Folgende Maßnahmen wurden ergriffen, um den Ursachen des Angriffs entgegenzugehen: </p>
 			<blockquote>
 				<p><i>{{details.getField('angriff.massnahmenErgriffen')}}</i><p>
 				<small>Autor</small>
