@@ -18,7 +18,8 @@
 		<input type="text" class="form-control" popover-append-to-body="true" ng-model="super.data.kontakt.telefonnummer"  popover-placement="left" uib-popover="{{eins.popoverText.telefonnummer.text}}" popover-trigger="mouseenter" placeholder="Telefonnummer">
 	</div>
 	<div class="radio-question form-group col-md-12">
-		<label class="question">Ist Ihre Organisation Betreiber einer <a href="http://www.kritis.bund.de/SubSites/Kritis/DE/Einfuehrung/einfuehrung_node.html" target="_blank">kritischen Infrastruktur</a>?</label>
+		<span class="glyphicon glyphicon-info-sign" aria-hidden="true" popover-append-to-body="true" popover-placement="left" popover-title="{{eins.popoverText.kritis.title}}" uib-popover-html="{{super.getPopoverContent('eins.popoverText.kritis.text')}}" popover-trigger="outsideClick"></span>
+		<label class="question">Ist Ihre Organisation Betreiber einer kritischen Infrastruktur?</label>
 		<div class="pull-right">
 			<label class="radio-inline">
 				<input type="radio" name="Ja" class="iradio_flat" ng-model="super.data.kontakt.kritis" value="ja" ><label>Ja</label>

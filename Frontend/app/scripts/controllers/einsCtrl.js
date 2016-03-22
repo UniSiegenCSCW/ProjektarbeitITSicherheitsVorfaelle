@@ -37,6 +37,10 @@ angular.module('kritisformularApp')
   			telefonnummer : {
   				title : "Telefonnumer",
   				text : "Hier bitte die Telefonnummer angeben, unter der Sie im Notfall erreichbar sind"
-  			}
+  			},
+        kritis : {
+          title : "Kritische Infrastruktur",
+          text : "Kritische Infrastrukturen (KRITIS) sind Organisationen oder Einrichtungen mit wichtiger Bedeutung für das staatliche Gemeinwesen, bei deren Ausfall oder Beeinträchtigung nachhaltig wirkende Versorgungsengpässe, erhebliche Störungen der öffentlichen Sicherheit oder andere dramatische Folgen eintreten würden."
+        }
   	}
   });
